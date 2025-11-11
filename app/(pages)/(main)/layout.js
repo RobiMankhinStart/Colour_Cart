@@ -21,12 +21,12 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const token = await cookies();
-  const myToken = token.get("token")?.value;
+  // const token = await cookies();
+  // const myToken = token.get("token")?.value;
 
-  if (!myToken) {
-    return redirect("/login");
-  }
+  // if (!myToken) {
+  //   return redirect("/login");
+  // }
 
   return (
     <html lang="en">

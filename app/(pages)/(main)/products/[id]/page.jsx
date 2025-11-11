@@ -5,13 +5,15 @@ async function getProduct(id) {
   const res = await fetch(`https://dummyjson.com/products/${id}`, {
     next: { revalidate: 10 },
   });
-  if (!res.ok) throw new Error("Failed to fetch product");
+  // if (!res.ok) throw new Error("Failed to fetch product");
 
   return res.json();
 }
 
 const ProductDetail = async ({ params }) => {
-  const { id } = params;
+  const { id } = await params;
+  console.log(id);
+
   const product = await getProduct(id);
   console.log(product);
 

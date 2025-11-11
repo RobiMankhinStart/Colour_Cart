@@ -11,14 +11,16 @@ const ProCard = ({ item }) => {
       <div className=" w-full flex justify-end">
         <CiHeart className="text-[32px] hover:scale-110 duration-200 cursor-pointer" />
       </div>
-      <Image src={thumbnail} height={160} alt="productImg" width={160} />
-      {/* <img className="w-[160px]" src={thumbnail} alt="productImg" /> */}
       <Link
         href={`/products/${id}`}
-        className=" ml-5 text-[16px]  flex mx-auto font-medium font-inter"
+        className=" cursor-pointer hover:scale-110 duration-300 border p-2"
       >
-        {title}
+        <Image src={thumbnail} height={160} alt="productImg" width={160} />
       </Link>
+      {/* <img className="w-[160px]" src={thumbnail} alt="productImg" /> */}
+      <h3 className=" ml-5 text-[16px]  flex mx-auto font-medium font-inter">
+        {title}
+      </h3>
       <h3 className="text-[24px] font-semibold font-inter">{price}</h3>
       <button className="cursor-pointer hover:bg-[#909090] py-3 px-16 font-medium font-inter text-[14px] rounded-lg bg-black text-white w-[188px] flex items-center justify-center">
         Buy Now

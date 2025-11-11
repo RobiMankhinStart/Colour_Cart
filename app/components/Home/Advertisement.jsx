@@ -2,6 +2,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import imgPlayStation from "../../../public/PlayStation.png";
+import imgHeadPhone from "../../../public/hero__gnfk5g59t0qe_xlarge_2x 1.png";
+import vision from "../../../public/hero__gnfk5g59t0qe_xlarge_2x 1.png";
+import mac from "../../../public/hero__gnfk5g59t0qe_xlarge_2x 1.png";
+
 const Advertisement = () => {
   return (
     <div>
@@ -27,11 +31,12 @@ const Advertisement = () => {
           </div>
           <div className="bot flex justify-between w-[800px] ">
             <div className="flex gap-12 items-center">
-              <img
+              {/* <img
                 className="w-[130px]"
                 src="/hero__gnfk5g59t0qe_xlarge_2x 1.png"
                 alt="head phone"
-              />
+              /> */}
+              <Image src={imgHeadPhone} alt="head phone" width={130} />
               <div className="w-[150px]">
                 <h3 className="font-inter font-light text-[29px]">
                   Apple AirPods <span className="font-medium">Max</span>
@@ -42,12 +47,14 @@ const Advertisement = () => {
               </div>
             </div>
             <div className="flex w-[390px] gap-4 items-center bg-[#353535] ">
-              <img
+              {/* <img
                 className="w-[136px] h-[150px]"
                 src="/image 36.png"
                 alt="vision"
-              />
-              <div className="w-[160px] ">
+              /> */}
+              <Image src={vision} alt="vision" width={130} height={150} />
+
+              <div className="w-40 ">
                 <h2 className="text-[29px] font-light font-inter text-white">
                   Apple Vision <span className="font-medium">Pro</span>
                 </h2>
@@ -58,7 +65,7 @@ const Advertisement = () => {
             </div>
           </div>
         </div>
-        <div className="right flex justify-between items-center pl-[56px] bg-[#EDEDED]">
+        <div className="right flex justify-between items-center pl-14 bg-[#EDEDED]">
           <div className="w-[360px]">
             <h3 className="text-[64px] font-inter font-thin">
               Macbook <span className="font-medium">Air</span>{" "}
@@ -68,18 +75,14 @@ const Advertisement = () => {
               with a spacious Liquid Retina display.
             </p>
             <Link
-              className=" inline-block border rounded-md text-[16px] font-medium font-inter w[191px] py-4 px-[56px]"
+              className=" inline-block border rounded-md text-[16px] font-medium font-inter w[191px] py-4 px-14"
               href={"/shop"}
             >
               Shop Now
             </Link>
           </div>
           <div>
-            <img
-              className="w-[292px]"
-              src="/MacBook Pro 14.png"
-              alt="MacBook Pro"
-            />
+            <Image src={mac} alt="MacBook pro" width={292} />
           </div>
         </div>
       </div>
