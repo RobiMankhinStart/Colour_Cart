@@ -10,12 +10,12 @@ async function getProduct(id) {
   return res.json();
 }
 
-const ProductDetail = async ({ params }) => {
+const Page = async ({ params }) => {
   const { id } = await params;
   console.log(id);
 
   const product = await getProduct(id);
-  console.log(product);
+  console.log("single vProduct", product);
 
   return (
     <div className="font-inter p-10 flex flex-col md:flex-row gap-10">
@@ -28,7 +28,7 @@ const ProductDetail = async ({ params }) => {
           className="object-cover rounded-md"
         />
       </div> */}
-      <ProductDetails />
+      <ProductDetails product={product} />
 
       <div className="flex-1 flex flex-col gap-4">
         <h2 className="text-3xl font-semibold">{product.title}</h2>
@@ -42,4 +42,4 @@ const ProductDetail = async ({ params }) => {
     </div>
   );
 };
-export default ProductDetail;
+export default Page;

@@ -23,7 +23,7 @@ const Page = async ({ searchParams }) => {
   const Products = await getProducts(limit, skip);
 
   // const Products = await getProducts();
-  console.log(Products);
+  console.log("products:", Products);
   return (
     <div className="">
       <div className="container">
