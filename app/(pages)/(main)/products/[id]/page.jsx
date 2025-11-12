@@ -1,5 +1,5 @@
+import ProductDetails from "@/app/components/ProductDetails/ProductDetails";
 import Image from "next/image";
-import React from "react";
 
 async function getProduct(id) {
   const res = await fetch(`https://dummyjson.com/products/${id}`, {
@@ -19,12 +19,7 @@ const ProductDetail = async ({ params }) => {
 
   return (
     <div className="font-inter p-10 flex flex-col md:flex-row gap-10">
-      <div className="flex-1 flex items-center justify-center">
-        {/* <img
-          src={product.thumbnail}
-          alt={product.title}
-          className="w-[300px] h-[300px] object-cover rounded-md"
-        /> */}
+      {/* <div className="flex-1 flex items-center justify-center">
         <Image
           src={product?.thumbnail}
           alt="product img"
@@ -32,7 +27,8 @@ const ProductDetail = async ({ params }) => {
           width={300}
           className="object-cover rounded-md"
         />
-      </div>
+      </div> */}
+      <ProductDetails />
 
       <div className="flex-1 flex flex-col gap-4">
         <h2 className="text-3xl font-semibold">{product.title}</h2>

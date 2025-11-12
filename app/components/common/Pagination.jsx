@@ -18,7 +18,7 @@ export default function Pagination({ total, limit, page }) {
   return (
     <div className="flex items-center justify-between mt-6">
       <div className="flex items-center gap-2">
-        <label className="text-sm">Show:</label>
+        <label className="text-sm ">Show:</label>
         <select
           value={limit}
           onChange={handleLimitChange}
@@ -28,7 +28,7 @@ export default function Pagination({ total, limit, page }) {
           <option value="10">10</option>
           <option value="20">20</option>
         </select>
-        <span className="text-sm text-gray-600">per page</span>
+        <span className="text-sm text-gray-600 mx-2">per page</span>
       </div>
 
       <div className="flex items-center gap-3">

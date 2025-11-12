@@ -34,7 +34,7 @@ export default async function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <div className="mt-28">{children}</div>
+        <div className="my-28">{children}</div>
         <Footer />
       </body>
     </html>
