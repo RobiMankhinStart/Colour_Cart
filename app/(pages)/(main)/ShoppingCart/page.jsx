@@ -6,7 +6,7 @@ import { CiCircleRemove } from "react-icons/ci";
 const page = () => {
   return (
     <div className="container">
-      <div className="mainDiv">
+      <div className="mainDiv flex items-center gap-12">
         <div className="leftProduct">
           <h2 className="text-[24px] font-semibold mb-10">Shopping Cart</h2>
           <div className="flex py-5 gap-4 items-center border-b border-[#A3A3A3]">
@@ -64,13 +64,21 @@ const page = () => {
             </button>
           </div>
         </div>
-        <div className="summary">
+        <div className="summary py-14 px-14 border border-[#EBEBEB]">
           <h2 className="text-[24px] font-semibold mb-10">Shopping Cart</h2>
-          <div>
-            <label className="text-[#545454] text-[14px]" htmlFor="promoCode">
+          <div className="flex flex-col">
+            <label
+              className="text-[#545454] text-[14px] mb-2"
+              htmlFor="promoCode"
+            >
               Discount code / Promo code
             </label>
-            <input type="text" />
+            <input
+              className="text-[#545454] text-[14px] p-4 border w-[400px] border-[#979797]"
+              type="text"
+              id="promoCode"
+              placeholder="Code"
+            />
           </div>
         </div>
       </div>
