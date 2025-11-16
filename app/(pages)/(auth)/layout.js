@@ -7,9 +7,9 @@ export default async function RootLayout({ children }) {
   const myToken = token.get("token")?.value;
 
   console.log(myToken);
-  if (myToken) {
-    return redirect("/");
-  }
+  // if (myToken) {
+  //   return redirect("/");
+  // }
 
   return (
     <html lang="en">
