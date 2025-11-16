@@ -102,7 +102,7 @@ const ProductDetails = ({ product }) => {
             src={currantImage}
             alt="productImage"
             width={400}
-            height={400}
+            height={420}
             className="object-contain w-full h-full "
           />
         ) : (

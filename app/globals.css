@@ -33,3 +33,21 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Move dots lower (in case needed) */
+.swiper-pagination {
+  bottom: 0px !important;
+}
+/* All dots */
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: #c7c7c7 !important;
+  opacity: 1 !important;
+  margin: 0 5px !important;
+}
+
+/* Active dot */
+.swiper-pagination-bullet-active {
+  background: #000 !important;
+  transform: scale(1.3);
+}
