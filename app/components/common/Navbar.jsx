@@ -46,9 +46,12 @@ const Navbar = () => {
             <div className="text-[32px] text-black cursor-pointer hover:text-[#989898] hover:scale-110 duration-200">
               <IoMdHeartEmpty />
             </div>
-            <div className="text-[32px] text-black cursor-pointer hover:text-[#989898] hover:scale-110 duration-200">
+            <Link
+              href={"ShoppingCart"}
+              className="text-[32px] text-black cursor-pointer hover:text-[#989898] hover:scale-110 duration-200"
+            >
               <IoCartOutline />
-            </div>
+            </Link>
             <Link
               href={"/login"}
               className="text-[32px] text-black cursor-pointer hover:text-[#989898] hover:scale-110 duration-200"
