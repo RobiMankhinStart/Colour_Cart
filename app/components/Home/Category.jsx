@@ -4,17 +4,17 @@ import { FaLaptopCode } from "react-icons/fa";
 
 const Category = () => {
   return (
-    <div className="py-[80px]">
+    <div className="py-20">
       <div className="container">
         <div className="mainRow gap-8 items-center flex flex-col">
           <h3 className="font-inter font-medium text-[24px]">
             Browse By Category
           </h3>
           <div className="flex items-center gap-8">
-            <div className="rounded-[15px] bg-[#EDEDED] w-[160px] h-[128px] flex items-center justify-center ">
+            <div className="rounded-[15px] bg-[#EDEDED] w-40 h-32 flex items-center justify-center ">
               <CiMobile4 className="text-[48px]" />
             </div>
-            <div className="rounded-[15px] bg-[#EDEDED] w-[160px] h-[128px] flex items-center justify-center ">
+            <div className="rounded-[15px] bg-[#EDEDED] w-40 h-32 flex items-center justify-center ">
               <FaLaptopCode className="text-[48px]" />
             </div>
           </div>
