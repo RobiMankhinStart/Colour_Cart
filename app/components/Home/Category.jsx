@@ -11,17 +11,15 @@ const Category = () => {
       try {
         const res = await fetch("https://dummyjson.com/products/categories");
         const data = await res.json();
-        const filteringIDs = data.products.filter((item) =>
-          localIDs.includes(item.id)
-        );
-        setcategories(filteringIDs);
+        // console.log(data);
+        setcategories(data);
       } catch (error) {
         console.log("fetching error : ", error);
       }
     }
     getcategories();
   }, []);
-  console.log("cartProducts", cartProducts);
+  console.log("categories", categories);
   return (
     <div className="py-20">
       <div className="container">
