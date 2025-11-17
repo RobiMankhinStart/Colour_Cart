@@ -4,6 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import React from "react";
 import ProCard from "@/app/components/Common/ProCard";
 import Pagination from "@/app/components/Common/Pagination";
+import ProList from "@/app/components/Products/ProList";
 
 async function getProducts(limit = 10, skip = 0) {
   const res = await fetch(
@@ -52,9 +53,7 @@ const Page = async ({ searchParams }) => {
               </div>
 
               <div className="mt-6 flex flex-wrap items-center gap-4">
-                {Products.products?.map((item) => (
-                  <ProCard key={item.id} item={item} />
-                ))}
+                <ProList products={Products.products} />
               </div>
             </div>
           </div>
