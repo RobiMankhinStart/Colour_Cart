@@ -1,13 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import group1 from "../../../public/group1.png";
 
 const PopularPro = () => {
   return (
     <div className="pt-[56px]">
       <div className="mainDiv mx-4 flex flex-wrap gap-2">
-        <div className="first flex flex-col w-[360px]">
-          <div className="w-full">
-            <img className="" src="/Group 1.png" alt="group1" />
+        <div className="first flex flex-col w-[400px]">
+          <div className="">
+            <Image className="" width={380} src={group1} alt="group1" />
           </div>
           <div className="flex px-8 pb-12 flex-col gap-4">
             <h3 className="font-inter font-light text-[33px]">
@@ -25,9 +27,9 @@ const PopularPro = () => {
             </Link>
           </div>
         </div>
-        <div className="bg-[#F9F9F9] flex flex-col w-[360px]">
-          <div className="w-full ">
-            <img className="" src="/Group 1.png" alt="group1" />
+        <div className="bg-[#F9F9F9] flex flex-col w-[460px]">
+          <div className=" ">
+            <Image className="" width={380} src={group1} alt="group1" />
           </div>
           <div className="flex px-8 pb-12  flex-col gap-4">
             <h3 className="font-inter font-light text-[33px]">
@@ -45,9 +47,9 @@ const PopularPro = () => {
             </Link>
           </div>
         </div>
-        <div className="bg-[#F9F9F9] flex flex-col w-[360px]">
-          <div className="w-full">
-            <img className="" src="/Group 1.png" alt="group1" />
+        <div className="bg-[#F9F9F9] flex flex-col w-[480px]">
+          <div className="">
+            <Image className="" width={360} src={group1} alt="group1" />
           </div>
           <div className="flex px-8 pb-12 flex-col gap-4">
             <h3 className="font-inter font-light text-[33px]">
@@ -65,9 +67,9 @@ const PopularPro = () => {
             </Link>
           </div>
         </div>
-        <div className="bg-[#F9F9F9] flex flex-col w-[360px]">
-          <div className="w-full">
-            <img className="" src="/Group 1.png" alt="group1" />
+        <div className="bg-[#F9F9F9] flex flex-col w-[500px]">
+          <div className="">
+            <Image className="" width={360} src={group1} alt="group1" />
           </div>
           <div className="flex px-8 pb-12 flex-col gap-4">
             <h3 className="font-inter font-light text-[33px]">
