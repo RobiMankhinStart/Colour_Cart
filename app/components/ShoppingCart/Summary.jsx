@@ -64,6 +64,7 @@
 
 // export default Summary;
 
+import Link from "next/link";
 import React from "react";
 
 const Summary = () => {
@@ -124,9 +125,12 @@ const Summary = () => {
         </div>
 
         {/* Checkout Button */}
-        <button className="bg-black text-white text-lg font-medium flex items-center justify-center w-full max-w-md h-14 mt-6 rounded-md cursor-pointer hover:bg-gray-800">
+        <Link
+          href={"checkout"}
+          className="bg-black text-white text-lg font-medium flex items-center justify-center w-full max-w-md h-14 mt-6 rounded-md cursor-pointer hover:bg-gray-800"
+        >
           Checkout
-        </button>
+        </Link>
       </div>
     </div>
   );
