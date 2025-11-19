@@ -10,10 +10,8 @@ const Advertisement = () => {
   return (
     <div className="w-full px-4 md:px-8 py-6">
       <div className="addRow flex flex-col lg:flex-row gap-10 justify-between">
-
         {/* LEFT SIDE */}
         <div className="left flex flex-col gap-8 flex-1">
-
           {/* PlayStation */}
           <div className="top flex flex-col sm:flex-row items-center gap-6">
             <Image
@@ -37,7 +35,6 @@ const Advertisement = () => {
 
           {/* Bottom Items */}
           <div className="bot flex flex-col md:flex-row justify-between gap-8 items-start md:items-center">
-
             {/* Airpods */}
             <div className="flex gap-6 items-center">
               <Image src={imgHeadPhone} alt="head phone" width={120} />
@@ -79,14 +76,19 @@ const Advertisement = () => {
             </p>
 
             <Link
-              className="inline-block border rounded-md text-[16px] font-medium px-10 py-3 mt-2"
-              href={"/shop"}
+              className="inline-block cursor-pointer hover:scale-110 duration-300 border rounded-md text-[16px] font-medium px-10 py-3 mt-2"
+              href={"/products"}
             >
               Shop Now
             </Link>
           </div>
 
-          <Image src={mac} alt="MacBook pro" width={260} className="w-[200px] sm:w-[260px]" />
+          <Image
+            src={mac}
+            alt="MacBook pro"
+            width={260}
+            className="w-[200px] sm:w-[260px]"
+          />
         </div>
       </div>
     </div>

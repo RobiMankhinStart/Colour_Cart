@@ -33,7 +33,7 @@ const Left = () => {
   );
 
   return (
-    <div className="mainDiv w-[256px] gap-4  flex flex-col justify-center p-3">
+    <div className="mainDiv w-full md:w-[260px] gap-4 flex flex-col p-3 border md:border-none rounded-md md:rounded-none">
       {/* Header */}
       <h2 className="header border-b border-[#B5B5B5] py-3 flex items-center justify-between font-inter text-xl font-medium">
         Brand

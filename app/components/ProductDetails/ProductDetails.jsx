@@ -14,8 +14,8 @@ const ProductDetails = ({ product }) => {
     );
   }
   return (
-    <div className="flex flex-start gap-4">
-      <div className="flex flex-col gap-2">
+    <div className="flex flex-col md:flex-row gap-4">
+      <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible">
         {images.map((item, index) => (
           <Image
             key={index}
@@ -32,7 +32,7 @@ const ProductDetails = ({ product }) => {
           />
         ))}
       </div>
-      <div className="bg-gray-100 rounded-md ml-5 w-full max-h-[550px] border-gray-200 shadow-sm flex items-center justify-center cursor-pointer">
+      <div className="bg-gray-100 rounded-md w-full h-300 sm:h-[550px] md:h-[550px] border-gray-200 shadow-sm flex items-center justify-center cursor-pointer">
         {images[0] ? (
           <Image
             src={currantImage}

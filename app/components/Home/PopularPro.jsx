@@ -22,7 +22,7 @@ const PopularPro = () => {
             </p>
             <Link
               className="inline-block text-[16px] font-medium font-inter rounded-md border py-3 sm:py-4 px-6 sm:px-14 w-max"
-              href={"/shop"}
+              href={"/products"}
             >
               Shop Now
             </Link>
@@ -44,7 +44,7 @@ const PopularPro = () => {
             </p>
             <Link
               className="inline-block text-[16px] font-medium font-inter rounded-md border py-3 sm:py-4 px-6 sm:px-14 w-max"
-              href={"/shop"}
+              href={"/products"}
             >
               Shop Now
             </Link>
@@ -66,7 +66,7 @@ const PopularPro = () => {
             </p>
             <Link
               className="inline-block text-[16px] font-medium font-inter rounded-md border py-3 sm:py-4 px-6 sm:px-14 w-max"
-              href={"/shop"}
+              href={"/products"}
             >
               Shop Now
             </Link>
@@ -88,7 +88,7 @@ const PopularPro = () => {
             </p>
             <Link
               className="inline-block text-[16px] font-medium font-inter rounded-md border py-3 sm:py-4 px-6 sm:px-14 w-max"
-              href={"/shop"}
+              href={"/products"}
             >
               Shop Now
             </Link>
