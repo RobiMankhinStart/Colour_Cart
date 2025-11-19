@@ -39,7 +39,7 @@ export default function page() {
         console.log("Token from Cookies:", Cookies.get("token"));
 
         toast.success("Login successful!");
-        // setTimeout(() => router.push("/"), 500);
+        setTimeout(() => router.push("/"), 500);
       } else {
         toast.error(data.message || "Invalid credentials");
       }

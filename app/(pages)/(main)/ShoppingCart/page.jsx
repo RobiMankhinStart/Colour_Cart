@@ -8,8 +8,8 @@ import Summary from "@/app/components/ShoppingCart/Summary";
 const page = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [cartProducts, setCartProducts] = useState([]);
-  const localIDs = JSON.parse(localStorage.getItem("nextProID")) || [];
   useEffect(() => {
+    const localIDs = JSON.parse(localStorage.getItem("nextProID")) || [];
     async function getProducts() {
       try {
         const res = await fetch("https://dummyjson.com/products");
@@ -28,6 +28,7 @@ const page = () => {
 
   // remove from cart
   const removeFromCart = (id) => {
+    const localIDs = JSON.parse(localStorage.getItem("nextProID")) || [];
     const removedID = localIDs.filter((item) => item !== id);
     localStorage.setItem("nextProID", JSON.stringify(removedID));
     // updating ui

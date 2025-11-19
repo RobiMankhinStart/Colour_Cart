@@ -1,8 +1,8 @@
 import Left from "@/app/components/Products/Left";
 
-import { IoIosArrowDown } from "react-icons/io";
+// import { IoIosArrowDown } from "react-icons/io";
 import React from "react";
-import ProCard from "@/app/components/Common/ProCard";
+// import ProCard from "@/app/components/Common/ProCard";
 import Pagination from "@/app/components/Common/Pagination";
 import ProList from "@/app/components/Products/ProList";
 
@@ -16,7 +16,8 @@ async function getProducts(limit = 10, skip = 0) {
   return res.json();
 }
 const Page = async ({ searchParams }) => {
-  const params = await searchParams;
+  // const params = await searchParams;
+  const params = await Promise.resolve(searchParams);
   const limit = Number(params.limit) || 10;
   const page = Number(params.page) || 1;
   const skip = (page - 1) * limit;

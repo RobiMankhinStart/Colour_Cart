@@ -91,7 +91,7 @@ export default function Reviews({ product }) {
           </p>
         </div>
       </div>
-       {/* User Review 2 */}
+      {/* User Review 2 */}
       <div className="mt-10 flex gap-4 p-5 bg-[#fafafa] shadow rounded-2xl">
         <div>
           <Image

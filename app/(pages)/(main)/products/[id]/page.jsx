@@ -1,6 +1,5 @@
 import ProductDetails from "@/app/components/ProductDetails/ProductDetails";
 import Image from "next/image";
-;
 import Reviews from "@/app/components/common/Reviews";
 import RelatedProCard from "@/app/components/common/RelatedProCard";
 import ProClient from "@/app/components/ProductDetails/ProClient";
@@ -14,7 +13,8 @@ async function getProduct(id) {
 }
 
 const Page = async ({ params }) => {
-  const { id } = await params;
+  // removing await from params
+  const { id } = params;
   console.log(id);
 
   const product = await getProduct(id);
