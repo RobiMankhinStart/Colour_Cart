@@ -20,7 +20,7 @@ export default function MobileNavbar() {
         />
 
         <Link href="/" className="text-xl font-semibold">
-          OneMegaByte
+          ColourCart
         </Link>
 
         <Link href="/ShoppingCart">
