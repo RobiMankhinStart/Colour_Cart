@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import React from "react";
 import { IoMdHeartEmpty } from "react-icons/io";
@@ -47,10 +48,11 @@ const Navbar = () => {
               <IoMdHeartEmpty />
             </div>
             <Link
-              href={"ShoppingCart"}
+            
+              href={"/ShoppingCart"}
               className="text-[32px] text-black cursor-pointer hover:text-[#989898] hover:scale-110 duration-200"
             >
-              <IoCartOutline />
+              <IoCartOutline/>
             </Link>
             <Link
               href={"/login"}
@@ -66,3 +68,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

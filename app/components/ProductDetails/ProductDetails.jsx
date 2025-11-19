@@ -4,11 +4,19 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 const ProductDetails = ({ product }) => {
-  const [currantImage, setCurrantImage] = useState(product?.images[0] || "");
+  const images = Array.isArray(product?.images) ? product.images : [];
+  const [currantImage, setCurrantImage] = useState(images[0] || "");
+  if (!product || images.length === 0) {
+    return (
+      <div className="bg-gray-100 rounded-md p-4 text-gray-500">
+        No image found
+      </div>
+    );
+  }
   return (
     <div className="flex flex-start gap-4">
       <div className="flex flex-col gap-2">
-        {product?.images.map((item, index) => (
+        {images.map((item, index) => (
           <Image
             key={index}
             src={item}
@@ -25,7 +33,7 @@ const ProductDetails = ({ product }) => {
         ))}
       </div>
       <div className="bg-gray-100 rounded-md ml-5 w-full max-h-[550px] border-gray-200 shadow-sm flex items-center justify-center cursor-pointer">
-        {product?.images[0] ? (
+        {images[0] ? (
           <Image
             src={currantImage}
             alt="productImage"

@@ -1,30 +1,26 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { TbCategoryPlus } from "react-icons/tb";
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-// swipper
-// Import Swiper React components
+// Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-// import required modules
 import { Navigation, Pagination } from "swiper/modules";
 
 const Category = () => {
   const [categories, setcategories] = useState([]);
+
   useEffect(() => {
     async function getcategories() {
       try {
-        const res = await fetch("https://dummyjson.com/products/categories");
+        const res = await fetch("https://dummyjson.com/products/categories", {
+          cache: "no-store",
+        });
         const data = await res.json();
-        // console.log(data);
         setcategories(data);
       } catch (error) {
         console.log("fetching error : ", error);
@@ -32,48 +28,59 @@ const Category = () => {
     }
     getcategories();
   }, []);
-  console.log("categories", categories);
+
   return (
-    <div className="py-20 bg-[#FAFAFA]">
-      <div className="container">
-        <div className="mainRow  gap-8 items-center flex flex-col">
-          <div className="flex items-center w-full justify-between">
-            <h3 className="font-inter font-semibold text-[24px]">
+    <div className="py-12 sm:py-16 md:py-20 bg-[#FAFAFA]">
+      <div className="container mx-auto px-4">
+        <div className="mainRow flex flex-col gap-8">
+          {/* Header */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center w-full justify-between gap-4 sm:gap-0">
+            <h3 className="font-inter font-semibold text-[20px] sm:text-[22px] md:text-[24px]">
               Browse By Category
             </h3>
+
             <div className="flex gap-4">
               {/* Custom arrows */}
-              <button className="prev-btn hover:scale-110 duration-200 hover:text-gray-600 text-4xl cursor-pointer">
+              <button className="prev-btn hover:scale-110 duration-200 hover:text-gray-600 text-3xl sm:text-4xl cursor-pointer">
                 <IoIosArrowBack />
               </button>
-              <button className="next-btn hover:scale-110 duration-200 hover:text-gray-600 text-4xl cursor-pointer">
+              <button className="next-btn hover:scale-110 duration-200 hover:text-gray-600 text-3xl sm:text-4xl cursor-pointer">
                 <IoIosArrowForward />
               </button>
             </div>
           </div>
+
+          {/* Swiper */}
           <Swiper
-            slidesPerView={4}
-            spaceBetween={30}
+            slidesPerView={1}
+            spaceBetween={20}
             loop={true}
             breakpoints={{
-              639: {
+              480: {
                 slidesPerView: 2,
                 slidesPerGroup: 2,
+                spaceBetween: 20,
               },
-              767: {
+              640: {
                 slidesPerView: 2,
                 slidesPerGroup: 2,
+                spaceBetween: 20,
               },
-              1023: {
+              768: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 25,
+              },
+              1024: {
                 slidesPerView: 4,
                 slidesPerGroup: 4,
+                spaceBetween: 30,
               },
             }}
             pagination={{
               clickable: true,
               el: ".custom-pagination",
             }}
-            // navigation={true}
             navigation={{
               nextEl: ".next-btn",
               prevEl: ".prev-btn",
@@ -81,19 +88,23 @@ const Category = () => {
             modules={[Pagination, Navigation]}
             className="mySwiper w-full"
           >
-            {categories.map((item) => (
+            {categories.map((item, index) => (
               <SwiperSlide
-                key={item.name}
-                className=" rounded-[15px] cursor-pointer bg-[#EDEDED] p-6 "
+                key={index}
+                className="rounded-[15px] cursor-pointer bg-[#EDEDED] p-4 sm:p-5 md:p-6 flex items-center justify-center"
               >
-                <div className="flex items-center justify-center gap-3">
-                  <TbCategoryPlus className="text-[46px]" />
-                  <p className="text-xl">{item.name}</p>
+                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+                  <TbCategoryPlus className="text-[36px] sm:text-[42px] md:text-[46px]" />
+                  <p className="text-lg sm:text-xl md:text-xl capitalize">
+                    {item.name}
+                  </p>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* <div className="custom-pagination mt-4 flex justify-center "></div> */}
+
+          {/* Optional custom pagination */}
+          {/* <div className="custom-pagination mt-4 flex justify-center"></div> */}
         </div>
       </div>
     </div>

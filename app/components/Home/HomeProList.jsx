@@ -27,19 +27,10 @@ const HomeProList = async () => {
               Featured
             </h3>
           </div>
-          <div className="flex items-center flex-wrap gap-5">
+          <div className="flex lg:items-start md:items-center sm:items-center flex-wrap gap-5">
             {data?.products.slice(0, 9).map((item) => (
               <ProCard key={item.id} item={item} />
             ))}
-          </div>
-          <div className="list flex flex-wrap gap-4">
-            <h1 className="text-4xl">hello</h1>
-            {/* <ProCard />
-            <ProCard />
-            <ProCard />
-            <ProCard />
-            <ProCard />
-            <ProCard /> */}
           </div>
         </div>
       </div>
