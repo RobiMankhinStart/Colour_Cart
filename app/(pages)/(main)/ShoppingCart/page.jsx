@@ -31,6 +31,10 @@ const page = () => {
     setCartProducts((prev) => prev.filter((item) => item.id !== id));
   };
 
+  // .............totalPrice..........
+  const SubTotal = cartProducts.reduce((acc, item) => acc + item.price, 0);
+  const Total = SubTotal + 29 + 23;
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-20 py-10">
       <h2 className="text-2xl md:text-3xl font-semibold mb-8">Shopping Cart</h2>
@@ -87,7 +91,7 @@ const page = () => {
 
         {/* Summary */}
         <div className="w-full lg:w-1/3">
-          <Summary />
+          <Summary SubTotal={SubTotal} Total={Total}/>
         </div>
       </div>
     </div>

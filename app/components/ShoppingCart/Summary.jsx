@@ -67,7 +67,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Summary = () => {
+const Summary = ({ SubTotal, Total }) => {
   return (
     <div className="w-full">
       <div className="summary bg-white py-8 px-6 sm:px-10 md:px-14 border border-gray-200 rounded-md shadow-sm">
@@ -108,7 +108,7 @@ const Summary = () => {
         <div className="flex flex-col gap-2 max-w-md">
           <div className="flex items-center justify-between text-base font-medium">
             <h3>Subtotal</h3>
-            <h3>$2347</h3>
+            <h3>${SubTotal}</h3>
           </div>
           <div className="flex items-center justify-between text-sm text-gray-500">
             <h3>Estimated Tax</h3>
@@ -120,7 +120,7 @@ const Summary = () => {
           </div>
           <div className="flex items-center justify-between text-base font-medium mt-2">
             <h3>Total</h3>
-            <h3>$2347</h3>
+            <h3>${Total}</h3>
           </div>
         </div>
 
