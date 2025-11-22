@@ -36,7 +36,7 @@ const Category = () => {
           {/* Header */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center w-full justify-between gap-4 sm:gap-0">
             <h3 className="font-inter font-semibold text-[20px] sm:text-[22px] md:text-[24px]">
-              Browse By Category
+              Our Product Categories
             </h3>
 
             <div className="flex gap-4">

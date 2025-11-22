@@ -16,15 +16,15 @@ const HomeProList = async () => {
     <div className="py-14">
       <div className="container">
         <div className="mainRow flex gap-8 text-[#8B8B8B] flex-col">
-          <div className="header  flex items-center gap-8">
-            <h3 className="text-[18px] hover:text-black hover:scale-110 duration-300 cursor-pointer font-medium font-inter">
-              New Arrival
+          <div className="header  flex items-center gap-4">
+            <h3 className="text-[22px] hover:text-black hover:scale-110 duration-300  font-medium font-inter">
+              GRAB
             </h3>
-            <h3 className="text-[18px] hover:text-black hover:scale-110 duration-300 cursor-pointer font-medium font-inter">
-              BestSeller
+            <h3 className="text-[22px] hover:text-black hover:scale-110 duration-300  font-medium font-inter">
+              YOUR
             </h3>
-            <h3 className="text-[18px] hover:text-black hover:scale-110 duration-300 cursor-pointer font-medium font-inter">
-              Featured
+            <h3 className="text-[22px] hover:text-black hover:scale-110 duration-300  font-medium font-inter">
+              NEEDS
             </h3>
           </div>
           <div className="flex lg:items-start md:items-center sm:items-center flex-wrap gap-5">
