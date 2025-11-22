@@ -2,6 +2,7 @@ import React from "react";
 // `https://dummyjson.com/products?limit=20&skip=10&select=title,price`,
 
 import ProCard from "../Common/ProCard";
+import Link from "next/link";
 
 async function getProducts() {
   const res = await fetch(`https://dummyjson.com/products`, {
@@ -30,7 +31,15 @@ const HomeProList = async () => {
           <div className="flex lg:items-start md:items-center sm:items-center flex-wrap gap-5">
             {data?.products.slice(0, 9).map((item) => (
               <ProCard key={item.id} item={item} />
-            ))}
+            ))}{" "}
+            <div className=" w-[268px] h-[440px]  shadow-md shadow-gray-400 rounded-[9px] px-2 py-5 flex flex-col gap-4 items-center justify-center">
+              <Link
+                className="inline-block font-semibold cursor-pointer hover:scale-110 duration-300 border rounded-md text-[18px] px-10 py-3 mt-2"
+                href={"/products"}
+              >
+                See More
+              </Link>
+            </div>
           </div>
         </div>
       </div>

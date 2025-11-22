@@ -14,7 +14,7 @@ export default function Home() {
       <Advertisement />
       <Category />
       <HomeProList />
-      <PopularPro />
+      {/* <PopularPro /> */}
       <Sale />
     </div>
   );
