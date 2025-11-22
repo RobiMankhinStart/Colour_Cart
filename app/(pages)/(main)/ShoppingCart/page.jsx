@@ -41,6 +41,11 @@ const page = () => {
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Left Product List */}
         <div className="flex-1">
+          {cartProducts.length === 0 && (
+            <p className="text-gray-500 text-4xl text-center">
+              No items in cart
+            </p>
+          )}
           {cartProducts?.map((item) => (
             <div
               key={item.id}
@@ -80,7 +85,7 @@ const page = () => {
                 <h3 className="text-lg font-medium">${item.price}</h3>
                 <button
                   onClick={() => removeFromCart(item.id)}
-                  className="text-2xl text-red-500 hover:text-red-700"
+                  className="text-2xl cursor-pointer text-red-500 hover:text-red-700"
                 >
                   <CiCircleRemove />
                 </button>
@@ -91,7 +96,11 @@ const page = () => {
 
         {/* Summary */}
         <div className="w-full lg:w-1/3">
-          <Summary SubTotal={SubTotal} Total={Total}/>
+          <Summary
+            SubTotal={SubTotal}
+            Total={Total}
+            count={cartProducts.length}
+          />
         </div>
       </div>
     </div>

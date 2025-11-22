@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FiEdit, FiX } from "react-icons/fi";
@@ -24,6 +24,25 @@ const addresses = [
 ];
 
 export default function CheckoutSteps() {
+  const [cartProducts, setCartProducts] = useState([]);
+
+  useEffect(() => {
+    const localIDs = JSON.parse(localStorage.getItem("nextProID")) || [];
+    async function getProducts() {
+      try {
+        const res = await fetch("https://dummyjson.com/products");
+        const data = await res.json();
+        const filteringIDs = data.products.filter((item) =>
+          localIDs.includes(item.id)
+        );
+        setCartProducts(filteringIDs);
+      } catch (error) {
+        console.log("fetching error : ", error);
+      }
+    }
+    getProducts();
+  }, []);
+
   const [step, setStep] = useState(1);
   const [selectedAddress, setSelectedAddress] = useState(1);
   const router = useRouter();
@@ -113,24 +132,26 @@ export default function CheckoutSteps() {
       {step === 3 && (
         <div className="bg-white p-6 rounded-lg shadow space-y-4">
           <h3 className="font-semibold">Payment</h3>
-
-          {[1, 2, 3].map((item) => (
+          {cartProducts.length === 0 && (
+            <p className="text-gray-500">No item</p>
+          )}
+          {cartProducts.map((item) => (
             <div
-              key={item}
+              key={item.id}
               className="flex justify-between items-center py-4 border-b border-gray-200"
             >
               <div className="flex items-center gap-4">
                 <Image
-                  src={imagePhone}
+                  src={item.thumbnail}
                   width={90}
                   height={90}
-                  alt="product"
+                  alt={item.title}
                   className="rounded-md"
                 />
-                <p className="text-lg font-medium">Apple iPhone</p>
+                <p className="text-lg font-medium">{item.title}</p>
               </div>
 
-              <p className="text-lg font-medium">$10.00</p>
+              <p className="text-lg font-medium">${item.price}</p>
             </div>
           ))}
         </div>
@@ -156,7 +177,11 @@ export default function CheckoutSteps() {
           </button>
         ) : (
           <button
-            onClick={() => router.push("/")}
+            onClick={() => {
+              localStorage.removeItem("nextProID");
+              setCartProducts([]);
+              router.push("/");
+            }}
             className="bg-black text-white px-6 py-2 rounded-md"
           >
             Pay
