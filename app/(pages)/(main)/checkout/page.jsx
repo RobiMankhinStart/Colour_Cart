@@ -42,6 +42,8 @@ export default function CheckoutSteps() {
     }
     getProducts();
   }, []);
+  const SubTotal = cartProducts.reduce((acc, item) => acc + item.price, 0);
+  const Total = SubTotal + 29 + 23;
 
   const [step, setStep] = useState(1);
   const [selectedAddress, setSelectedAddress] = useState(1);
@@ -162,7 +164,7 @@ export default function CheckoutSteps() {
         {step > 1 && (
           <button
             onClick={() => setStep(step - 1)}
-            className="border border-gray-400 px-5 py-2 rounded-md"
+            className="border border-gray-400 px-5 py-2 rounded-md cursor-pointer hover:scale-110 duration-200"
           >
             Back
           </button>
@@ -171,7 +173,7 @@ export default function CheckoutSteps() {
         {step < 3 ? (
           <button
             onClick={() => setStep(step + 1)}
-            className="bg-black text-white px-6 py-2 rounded-md"
+            className="bg-black text-white px-6 py-2 rounded-md cursor-pointer hover:scale-110 duration-200"
           >
             Next
           </button>
@@ -182,7 +184,7 @@ export default function CheckoutSteps() {
               setCartProducts([]);
               router.push("/");
             }}
-            className="bg-black text-white px-6 py-2 rounded-md"
+            className="bg-black text-white px-6 py-2 rounded-md cursor-pointer hover:scale-110 duration-200"
           >
             Pay
           </button>

@@ -69,13 +69,13 @@ const page = () => {
 
               {/* Quantity Controls */}
               <div className="flex items-center gap-2 mt-2 sm:mt-0">
-                <button className="text-xl px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">
+                <button className="cursor-pointer text-xl px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">
                   -
                 </button>
                 <p className="px-3 py-1 border border-gray-300 rounded text-center">
                   1
                 </p>
-                <button className="text-xl px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">
+                <button className="cursor-pointer text-xl px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">
                   +
                 </button>
               </div>
