@@ -31,11 +31,12 @@ export default async function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
       >
-        <div className="flex">
-          <SideNav />
+        <SideNav />
+
+        <div className="">
           <TopNav />
+          {children}
         </div>
-        <div className="">{children}</div>
       </body>
     </html>
   );
