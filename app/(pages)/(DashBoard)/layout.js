@@ -33,7 +33,7 @@ export default async function RootLayout({ children }) {
       >
         <SideNav />
 
-        <div className="ml-auto w-[86.4%]">
+        <div className="">
           <TopNav />
           {children}
         </div>

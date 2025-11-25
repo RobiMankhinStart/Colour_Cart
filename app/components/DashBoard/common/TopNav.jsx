@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const TopNav = () => {
   return (
-    <div className="flex gap-[47px]  py-6 px-12  bg-white">
+    <div className="flex ml-2 gap-[47px]  py-6 px-12 bg-white">
       <div className=" flex items-center pl-4 gap-0.5 w-[360px] h-12 rounded-xl bg-[#F5F5FA]">
         <CiSearch className="text-[20px] text-[#7E7E8F]" />
         <input
@@ -27,9 +27,9 @@ const TopNav = () => {
         </button>
         <MdKeyboardArrowDown className="text-[20px] text-[#C6CBD9] ml-auto" />
       </div>
-      <div className="flex items-center gap-12 ml-[760px] ">
-        <IoChatbubblesOutline className="text-[24px] text-[#7E7E8F]" />
-        <MdOutlineNotificationImportant className="text-[24px] text-[#7E7E8F]" />
+      <div className="flex items-center gap-8 ml-[600px] ">
+        <IoChatbubblesOutline className="text-[34px] text-[#7E7E8F]" />
+        <MdOutlineNotificationImportant className="text-[34px] text-[#7E7E8F]" />
         <Image src={avator} alt="avator" />
       </div>
     </div>

@@ -34,7 +34,7 @@ export default function Top() {
   ];
 
   return (
-    <div className="w-full  flex gap-4 overflow-x-auto p-4">
+    <div className="flex gap-4 overflow-x-auto py-4">
       {cards.map((card, i) => (
         <div
           key={i}

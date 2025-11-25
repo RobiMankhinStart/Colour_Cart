@@ -1,5 +1,7 @@
 import BestSellers from "@/app/components/DashBoard/DashHome/BestSellers";
+import Bottom from "@/app/components/DashBoard/DashHome/Bottom";
 import MainChart from "@/app/components/DashBoard/DashHome/MainChart";
+import RecentPurchases from "@/app/components/DashBoard/DashHome/RecentPurchases";
 import Top from "@/app/components/DashBoard/DashHome/Top";
 import React from "react";
 import { GoHome } from "react-icons/go";
@@ -7,7 +9,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const page = () => {
   return (
-    <div className="px-[23px] pt-[42px]">
+    <div className="px-[23px] pt-[42px] ">
       <h2 className="text-[28px] font-bold font-poppins">Dashboard</h2>
 
       {/* bread Curmbs  */}
@@ -23,10 +25,12 @@ const page = () => {
       </div>
       {/* ....top  */}
       <Top />
-      <div className="flex justify-between">
+      <div className="flex justify-between  w-[99%]">
         <MainChart />
         <BestSellers />
       </div>
+      <RecentPurchases />
+      <Bottom />
     </div>
   );
 };

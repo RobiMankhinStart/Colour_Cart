@@ -29,7 +29,7 @@ const cardinal = curveCardinal.tension(0.2);
 
 export default function MainChart() {
   return (
-    <div className="ml-4 py-4.5 w-[60%] px-6 rounded-xl border bg-white border-[#E8EDF2]">
+    <div className=" py-4.5 px-6 rounded-xl border bg-white border-[#E8EDF2]">
       {/* heading part  */}
       <div className="flex items-center justify-between pb-5 pt-2">
         <h2 className="text-[16px] font-poppins font-semibold">
@@ -67,7 +67,7 @@ export default function MainChart() {
 
       <div className="w-full max-w-[950px]  h-[400px]">
         <AreaChart
-          width={900}
+          width={850}
           height={350}
           data={data}
           margin={{ top: 20, right: 0, left: 0, bottom: 0 }}
