@@ -65,7 +65,7 @@ export default function MainChart() {
       </div>
       {/* cart body part  */}
 
-      <div className="w-full max-w-[950px] border h-[400px]">
+      <div className="w-full max-w-[950px]  h-[400px]">
         <AreaChart
           width={900}
           height={350}

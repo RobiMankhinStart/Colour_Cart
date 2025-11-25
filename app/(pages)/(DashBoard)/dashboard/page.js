@@ -1,3 +1,4 @@
+import BestSellers from "@/app/components/DashBoard/DashHome/BestSellers";
 import MainChart from "@/app/components/DashBoard/DashHome/MainChart";
 import Top from "@/app/components/DashBoard/DashHome/Top";
 import React from "react";
@@ -22,8 +23,9 @@ const page = () => {
       </div>
       {/* ....top  */}
       <Top />
-      <div>
+      <div className="flex items-center justify-between">
         <MainChart />
+        <BestSellers />
       </div>
     </div>
   );
