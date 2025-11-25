@@ -23,7 +23,7 @@ const page = () => {
       </div>
       {/* ....top  */}
       <Top />
-      <div className="flex items-center justify-between">
+      <div className="flex justify-between">
         <MainChart />
         <BestSellers />
       </div>
