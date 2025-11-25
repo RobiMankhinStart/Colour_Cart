@@ -29,11 +29,11 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex bg-[#f5f5fa]!`}
       >
         <SideNav />
 
-        <div className="">
+        <div className="ml-auto w-[86.4%]">
           <TopNav />
           {children}
         </div>

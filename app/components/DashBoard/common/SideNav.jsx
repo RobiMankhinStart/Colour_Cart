@@ -12,7 +12,7 @@ import person2 from "../../../../public/personimg2img.png";
 
 const SideNav = () => {
   return (
-    <div className="relative">
+    <div className="relative  bg-white">
       <div className="absolute top-5 z-30 left-[97%] rounded-full shadow-gray-700 border border-[#e9d5d5] cursor-pointer shadow-2xl p-2">
         <MdOutlineArrowBackIosNew className="text-[16px] " />
       </div>

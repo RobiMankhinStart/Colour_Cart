@@ -3,10 +3,14 @@ import { CiSearch } from "react-icons/ci";
 import { CiMicrophoneOn } from "react-icons/ci";
 import { RiEditBoxLine } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { IoChatbubblesOutline } from "react-icons/io5";
+import { MdOutlineNotificationImportant } from "react-icons/md";
+import avator from "../../../../public/Avatar.png";
+import Image from "next/image";
 
 const TopNav = () => {
   return (
-    <div className="flex border py-6 px-12 ">
+    <div className="flex gap-[47px]  py-6 px-12  bg-white">
       <div className=" flex items-center pl-4 gap-0.5 w-[360px] h-12 rounded-xl bg-[#F5F5FA]">
         <CiSearch className="text-[20px] text-[#7E7E8F]" />
         <input
@@ -21,7 +25,12 @@ const TopNav = () => {
         <button className="text-[14px] font-semibold font-poppins">
           Browse
         </button>
-        <MdKeyboardArrowDown className="text-[16px] text-[#C6CBD9] ml-auto" />
+        <MdKeyboardArrowDown className="text-[20px] text-[#C6CBD9] ml-auto" />
+      </div>
+      <div className="flex items-center gap-12 ml-[760px] ">
+        <IoChatbubblesOutline className="text-[24px] text-[#7E7E8F]" />
+        <MdOutlineNotificationImportant className="text-[24px] text-[#7E7E8F]" />
+        <Image src={avator} alt="avator" />
       </div>
     </div>
   );
