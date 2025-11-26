@@ -8,9 +8,10 @@ import {
 import product1 from "../../../../../public/product1.png";
 import product2 from "../../../../../public/product2.png";
 import Image from "next/image";
-import { CiStar } from "react-icons/ci";
+import { CiCalendar, CiFilter, CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { SlOptions } from "react-icons/sl";
+import { IoIosArrowDown } from "react-icons/io";
 
 const page = () => {
   return (
@@ -31,7 +32,34 @@ const page = () => {
 
       {/* category  */}
 
-      <div className="mt-6 flex items-center gap-[445px]"></div>
+      <div className="my-6 flex items-center justify-between">
+        <button className="cursor-pointer w-[225px] border border-[#E8EDF2] bg-white rounded-lg h-12 flex px-3 items-center justify-between">
+          <p className="text-[#7E7E8F] text-[14px]">All Category</p>
+          <p className="text-[#7E7E8F] text-[14px]">
+            <IoIosArrowDown />
+          </p>
+        </button>
+        <div className="flex items-center gap-3">
+          <button className="cursor-pointer w-[174px] border border-[#E8EDF2] bg-white rounded-lg h-12 flex px-3 items-center justify-between">
+            <p className="text-[#7E7E8F] text-[14px]">10-02-2021</p>
+            <p className="text-[#7E7E8F] text-[18px]">
+              <CiCalendar />
+            </p>
+          </button>
+          <button className="cursor-pointer w-[174px] border border-[#E8EDF2] bg-white rounded-lg h-12 flex px-3 items-center justify-between">
+            <p className="text-[#7E7E8F] text-[14px]">Status</p>
+            <p className="text-[#7E7E8F] text-[18px]">
+              <CiCalendar />
+            </p>
+          </button>
+          <button className="cursor-pointer w-[90px] border border-[#E8EDF2] bg-white rounded-lg h-12 flex px-3 items-center justify-between">
+            <p className="text-[#7E7E8F] text-[18px]">
+              <CiFilter />
+            </p>
+            <p className="text-[#7E7E8F] text-[14px]">Filters</p>
+          </button>
+        </div>
+      </div>
       {/* ...productList......  */}
       <div className="proList px-6">
         {/* ...header .... */}

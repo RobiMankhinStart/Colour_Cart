@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../../../app/globals.css";
 import SideNav from "@/app/components/DashBoard/common/SideNav";
 import TopNav from "@/app/components/DashBoard/common/TopNav";
+import Footer from "@/app/components/DashBoard/common/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default async function RootLayout({ children }) {
         <div className="">
           <TopNav />
           <div className="mt-28">{children}</div>
+          <Footer />
         </div>
       </body>
     </html>
