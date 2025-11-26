@@ -29,13 +29,13 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex bg-[#f5f5fa]!`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex relative bg-[#f5f5fa]!`}
       >
         <SideNav />
 
         <div className="">
           <TopNav />
-          {children}
+          <div className="mt-28">{children}</div>
         </div>
       </body>
     </html>
