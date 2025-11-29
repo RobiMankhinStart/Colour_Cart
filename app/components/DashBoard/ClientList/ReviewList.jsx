@@ -166,9 +166,9 @@ export default function ReviewList({ users }) {
               <span>Customer</span>
             </div>
 
-            <div className="w-[350px]">Comment</div>
-            <div className="w-[150px]">Rating</div>
-            <div className="w-[120px]">Date</div>
+            <div className="w-[250px] ml-20 ">Comment</div>
+            <div className="w-[120px] ml-12">Rating</div>
+            <div className="w-[120px] ml-5">Date</div>
             <div className="w-[60px]">Actions</div>
           </div>
 
@@ -179,7 +179,7 @@ export default function ReviewList({ users }) {
               className="flex items-start border-b border-[#E8EDF2] py-4"
             >
               {/* CUSTOMER */}
-              <div className="flex gap-4 w-[250px]">
+              <div className="flex  w-[320px] gap-4 ">
                 <input type="checkbox" className="w-4 h-4 mt-1" />
                 <div className="flex items-center gap-2">
                   <Image src={item.image} width={60} height={60} alt="client" />
@@ -195,7 +195,7 @@ export default function ReviewList({ users }) {
               </div>
 
               {/* COMMENT */}
-              <div className="w-[350px] text-[12px] text-[#7E7E8F] line-clamp-2">
+              <div className="w-[300px] text-[12px] text-[#7E7E8F] line-clamp-2">
                 {item?.comment ?? "No comment available."}
               </div>
 
