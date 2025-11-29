@@ -33,18 +33,18 @@ export default function ReviewList() {
       </h2>
 
       {/* FIXED HEIGHT SO ACTION MENU DOESN'T CREATE SCROLL */}
-      <div className="mt-4 max-h-[420px] overflow-y-auto">
-        <div className="min-w-[900px]">
+      <div className="mt-4 max-h-[500px] overflow-y-auto">
+        <div className="min-w-[1000px]">
           {/* HEADER */}
           <div className="flex text-[14px] font-normal font-main text-[#9A9AAF] border-b border-[#E8EDF2] pb-3">
-            <div className="flex items-center gap-[82px] w-[250px]">
+            <div className="flex items-center gap-[82px] w-[270px]">
               <input type="checkbox" className="w-4 h-4" />
               <span>Customer</span>
             </div>
 
-            <div className="w-[300px]">Comment</div>
-            <div className="w-[120px]">Rating</div>
-            <div className="w-[140px]">Date</div>
+            <div className="w-[320px]">Comment</div>
+            <div className="w-[168px]">Rating</div>
+            <div className="w-[120px]">Date</div>
             <div className="w-[60px]">Actions</div>
           </div>
 
@@ -55,7 +55,7 @@ export default function ReviewList() {
               className="flex items-start border-b border-[#E8EDF2] py-[15px]"
             >
               {/* Customer */}
-              <div className="flex items-center gap-[82px] w-[250px]">
+              <div className="flex items-center gap-[82px] w-[270px]">
                 <input type="checkbox" className="w-4 h-4" />
 
                 <div>
@@ -72,7 +72,7 @@ export default function ReviewList() {
               </div>
 
               {/* Rating */}
-              <div className="w-[120px] flex items-center gap-1">
+              <div className="w-[120px] mx-7 flex items-center gap-1">
                 {Array.from({ length: item.rating }).map((_, i) => (
                   <AiFillStar key={i} className="text-yellow-500 text-lg" />
                 ))}
