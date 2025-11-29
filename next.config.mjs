@@ -1,26 +1,23 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   /* config options here */
-//   // reactCompiler: true,
-//   images: {
-//     remotePatterns: {
-//       protocol: "https",
-//       hostname: "cdn.dummyjson.com",
-//       port: "",
-//       pathname: "/**",
-//     },
-//   },
-// };
-
 // export default nextConfig;
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "dummyjson.com",
+        hostname: "i.dummyjson.com", // for product images
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "dummyjson.com", // for icons or other images
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.dummyjson.com", // new product images
         port: "",
         pathname: "/**",
       },
