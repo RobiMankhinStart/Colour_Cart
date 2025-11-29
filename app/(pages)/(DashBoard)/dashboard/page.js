@@ -1,13 +1,32 @@
+"use client";
 import BestSellers from "@/app/components/DashBoard/DashHome/BestSellers";
 import Bottom from "@/app/components/DashBoard/DashHome/Bottom";
 import MainChart from "@/app/components/DashBoard/DashHome/MainChart";
 import RecentPurchases from "@/app/components/DashBoard/DashHome/RecentPurchases";
 import Top from "@/app/components/DashBoard/DashHome/Top";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GoHome } from "react-icons/go";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const page = () => {
+  const [products, setProducts] = useState([]);
+  console.log("products", products);
+  useEffect(() => {
+    // const localIDs = JSON.parse(localStorage.getItem("nextProID")) || [];
+    async function getProducts() {
+      try {
+        const res = await fetch("https://dummyjson.com/products");
+        const data = await res.json();
+        // const filteringIDs = data.products.filter((item) =>
+        //   localIDs.includes(item.id)
+        // );
+        setProducts(data.products);
+      } catch (error) {
+        console.log("fetching error : ", error);
+      }
+    }
+    getProducts();
+  }, []);
   return (
     <div className="px-[23px] ">
       <h2 className="text-[28px] font-bold font-poppins">Dashboard</h2>
@@ -29,7 +48,7 @@ const page = () => {
         <MainChart />
         <BestSellers />
       </div>
-      <RecentPurchases />
+      <RecentPurchases products={products} />
       <Bottom />
     </div>
   );

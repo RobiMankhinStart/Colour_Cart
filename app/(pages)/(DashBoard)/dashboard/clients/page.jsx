@@ -1,12 +1,27 @@
 "use client";
 import ReviewList from "@/app/components/DashBoard/ClientList/ReviewList";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FiChevronDown, FiFilter } from "react-icons/fi";
 import { GoHome } from "react-icons/go";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 // import ReviewsList from "../../components/client/ReviewsList";
 
 const page = () => {
+  const [users, setUsers] = useState([]);
+  console.log("products", users);
+  useEffect(() => {
+    async function getUsers() {
+      try {
+        const res = await fetch("https://dummyjson.com/users");
+        const data = await res.json();
+
+        setUsers(data.users);
+      } catch (error) {
+        console.log("fetching error : ", error);
+      }
+    }
+    getUsers();
+  }, []);
   return (
     <>
       <div className="px-[23px] md:p-6 lg:p-8 bg[#F9FAFB] min-h-screen">
@@ -54,7 +69,7 @@ const page = () => {
           </div>
         </div>
 
-        <ReviewList />
+        <ReviewList users={users} />
       </div>
     </>
   );

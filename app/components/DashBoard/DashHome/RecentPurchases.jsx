@@ -125,7 +125,7 @@ const statusColor = {
   Canceled: "bg-red-500",
 };
 
-export default function RecentPurchases() {
+export default function RecentPurchases({ products }) {
   return (
     <div className=" w-[99%] bg-white p-6 shadow rounded-xl mt-6 font-poppins!">
       <h2 className="text-[18px] font-semibold mb-4">Recent Purchases</h2>
@@ -143,7 +143,7 @@ export default function RecentPurchases() {
       </div>
 
       {/* ROWS */}
-      {purchases.map((p, i) => (
+      {products?.slice(0, 5).map((p, i) => (
         <div
           key={i}
           className="flex items-center border-b border-[#E8EDF2] py-4 last:border-none"
@@ -154,36 +154,36 @@ export default function RecentPurchases() {
           </div>
 
           {/* Product */}
-          <div className="flex-1">{p.product}</div>
+          <div className="flex-1">{p?.title}</div>
 
           {/* Order ID */}
-          <div className="flex-1">{p.orderId}</div>
+          <div className="w-20  ml-7">{p?.id}</div>
 
           {/* Date */}
-          <div className="flex-1">{p.date}</div>
+          <div className="">{p?.meta.updatedAt}</div>
 
           {/* Customer */}
-          <div className="flex-1 flex items-center gap-2">
+          <div className="flex-1  ml-14 flex items-center gap-2">
             <Image
-              src={p.customer.avatar}
+              src={avator}
               width={26}
               height={26}
               alt="avatar"
               className="rounded-full"
             />
-            {p.customer.name}
+            {p?.reviews[0].reviewerName}
           </div>
 
           {/* Status */}
-          <div className="flex-1 flex items-center gap-2">
+          <div className="flex-1 flex items-center ml-12 gap-2">
             <span
-              className={`w-2 h-2 rounded-full ${statusColor[p.status]}`}
+              className={`w-2 h-2 rounded-full border ${statusColor[p.status]}`}
             ></span>
-            {p.status}
+            Active
           </div>
 
           {/* Amount */}
-          <div className="flex-1">{p.amount}</div>
+          <div className="flex-1">${p.price}</div>
 
           {/* Actions */}
           <div className="w-[30px]">

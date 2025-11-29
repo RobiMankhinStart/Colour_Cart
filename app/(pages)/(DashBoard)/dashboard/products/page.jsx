@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { GoHome } from "react-icons/go";
 import {
   MdKeyboardArrowDown,
@@ -13,6 +14,21 @@ import { FaStar } from "react-icons/fa";
 import { SlOptions } from "react-icons/sl";
 
 const page = () => {
+  const [products, setProducts] = useState([]);
+  console.log("products", products);
+  useEffect(() => {
+    async function getProducts() {
+      try {
+        const res = await fetch("https://dummyjson.com/products");
+        const data = await res.json();
+
+        setProducts(data.products);
+      } catch (error) {
+        console.log("fetching error : ", error);
+      }
+    }
+    getProducts();
+  }, []);
   return (
     <div className="px-[23px] font-poppins! ">
       <h2 className="text-[28px] font-bold font-poppins">All Products</h2>
@@ -32,7 +48,7 @@ const page = () => {
       <div className="proList px-6">
         {/* ...header .... */}
         <div className="w-full border-b border-[#E8EDF2] pb-2 flex items-center gap-[235px]">
-          <div className="flex text-[#7E7E8F]! gap-14  items-center ">
+          <div className="flex  text-[#7E7E8F]! gap-14  items-center ">
             <div className="flex items-center gap-10 ">
               <div className="flex items-center gap-3">
                 <p className=" text-[16px]">Image</p>
@@ -111,10 +127,105 @@ const page = () => {
         </div>
         {/* ......proList....  */}
         <div className="">
-          <div className="w-full my-3 border-b border-[#E8EDF2] pb-2 flex items-center gap-[60px]">
+          {products?.map((item) => (
+            <div
+              key={item.id}
+              className="w-full  my-3 border-b border-[#E8EDF2] pb-2 flex items-center gap-[60px]"
+            >
+              <div className="flex  text-[#7E7E8F]! gap-10  items-center ">
+                <div className=" ">
+                  <Image
+                    className=""
+                    src={item.thumbnail}
+                    height={80}
+                    width={82}
+                    alt="productImg"
+                  />
+                </div>
+
+                <div className="flex items-center gap-10 ">
+                  <div className="flex flex-col gap-1">
+                    <p className=" text-[16px] font-semibold">{item.title}</p>
+                    <p className="text-[14px]  h-16 overflow-y-hidden text-[#7E7E8F] w-[250px]">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex text-[#7E7E8F]! gap-14  items-center ">
+                <p className=" text-[16px] text-[#7E7E8F]">{item.sku}</p>
+
+                <p className=" text-[16px] ">${item.price}</p>
+
+                <div className="flex items-center gap-2 ml-8 ">
+                  <div className="bg-[#50D1B2] size-3 rounded-full"></div>
+                  <p className=" text-[16px] ">Active</p>
+                </div>
+                <div className="flex items-center gap-10 ">
+                  <p className=" text-[16px] ml-10">556</p>
+                </div>
+
+                <div className="text-[#FEA73E] ml-9 text-[20px] flex items-center gap-1">
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                </div>
+
+                <p className=" text-[14px] font-semibold ml-4">186 / 2058</p>
+                <button className="cursor-pointer">
+                  <SlOptions />
+                </button>
+              </div>
+            </div>
+          ))}
+          {/* <div className="w-full my-3 border-b border-[#E8EDF2] pb-2 flex items-center gap-[60px]">
             <div className="flex text-[#7E7E8F]! gap-10  items-center ">
               <div className=" ">
                 <Image src={product1} width={82} alt="productImg" />
+              </div>
+
+              <div className="flex items-center gap-10 ">
+                <div className="flex flex-col gap-1">
+                  <p className=" text-[16px] font-semibold">
+                    Cubitt Smart Watch
+                  </p>
+                  <p className="text-[12px] text-[#7E7E8F] w-[250px]">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex text-[#7E7E8F]! gap-14  items-center ">
+              <p className=" text-[16px] text-[#7E7E8F]">FROX-13563</p>
+
+              <p className=" text-[16px] ">$576.28</p>
+
+              <div className="flex items-center gap-2 ml-8 ">
+                <div className="bg-[#50D1B2] size-3 rounded-full"></div>
+                <p className=" text-[16px] ">Active</p>
+              </div>
+              <div className="flex items-center gap-10 ">
+                <p className=" text-[16px] ml-10">556</p>
+              </div>
+
+              <div className="text-[#FEA73E] ml-9 text-[20px] flex items-center gap-1">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
+
+              <p className=" text-[14px] font-semibold ml-4">186 / 2058</p>
+              <button className="cursor-pointer">
+                <SlOptions />
+              </button>
+            </div>
+          </div>
+          <div className="w-full my-3 border-b border-[#E8EDF2] pb-2 flex items-center gap-[60px]">
+            <div className="flex text-[#7E7E8F]! gap-10  items-center ">
+              <div className=" ">
+                <Image src={product2} width={82} alt="productImg" />
               </div>
 
               <div className="flex items-center gap-10 ">
@@ -243,49 +354,6 @@ const page = () => {
           <div className="w-full my-3 border-b border-[#E8EDF2] pb-2 flex items-center gap-[60px]">
             <div className="flex text-[#7E7E8F]! gap-10  items-center ">
               <div className=" ">
-                <Image src={product1} width={82} alt="productImg" />
-              </div>
-
-              <div className="flex items-center gap-10 ">
-                <div className="flex flex-col gap-1">
-                  <p className=" text-[16px] font-semibold">
-                    Cubitt Smart Watch
-                  </p>
-                  <p className="text-[12px] text-[#7E7E8F] w-[250px]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="flex text-[#7E7E8F]! gap-14  items-center ">
-              <p className=" text-[16px] text-[#7E7E8F]">FROX-13563</p>
-
-              <p className=" text-[16px] ">$576.28</p>
-
-              <div className="flex items-center gap-2 ml-8 ">
-                <div className="bg-[#50D1B2] size-3 rounded-full"></div>
-                <p className=" text-[16px] ">Active</p>
-              </div>
-              <div className="flex items-center gap-10 ">
-                <p className=" text-[16px] ml-10">556</p>
-              </div>
-
-              <div className="text-[#FEA73E] ml-9 text-[20px] flex items-center gap-1">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-              </div>
-
-              <p className=" text-[14px] font-semibold ml-4">186 / 2058</p>
-              <button className="cursor-pointer">
-                <SlOptions />
-              </button>
-            </div>
-          </div>
-          <div className="w-full my-3 border-b border-[#E8EDF2] pb-2 flex items-center gap-[60px]">
-            <div className="flex text-[#7E7E8F]! gap-10  items-center ">
-              <div className=" ">
                 <Image src={product2} width={82} alt="productImg" />
               </div>
 
@@ -325,50 +393,7 @@ const page = () => {
                 <SlOptions />
               </button>
             </div>
-          </div>
-          <div className="w-full my-3 border-b border-[#E8EDF2] pb-2 flex items-center gap-[60px]">
-            <div className="flex text-[#7E7E8F]! gap-10  items-center ">
-              <div className=" ">
-                <Image src={product2} width={82} alt="productImg" />
-              </div>
-
-              <div className="flex items-center gap-10 ">
-                <div className="flex flex-col gap-1">
-                  <p className=" text-[16px] font-semibold">
-                    Cubitt Smart Watch
-                  </p>
-                  <p className="text-[12px] text-[#7E7E8F] w-[250px]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="flex text-[#7E7E8F]! gap-14  items-center ">
-              <p className=" text-[16px] text-[#7E7E8F]">FROX-13563</p>
-
-              <p className=" text-[16px] ">$576.28</p>
-
-              <div className="flex items-center gap-2 ml-8 ">
-                <div className="bg-[#50D1B2] size-3 rounded-full"></div>
-                <p className=" text-[16px] ">Active</p>
-              </div>
-              <div className="flex items-center gap-10 ">
-                <p className=" text-[16px] ml-10">556</p>
-              </div>
-
-              <div className="text-[#FEA73E] ml-9 text-[20px] flex items-center gap-1">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-              </div>
-
-              <p className=" text-[14px] font-semibold ml-4">186 / 2058</p>
-              <button className="cursor-pointer">
-                <SlOptions />
-              </button>
-            </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
