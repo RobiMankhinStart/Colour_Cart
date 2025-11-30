@@ -15,6 +15,7 @@ import { GoHome } from "react-icons/go";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import ProductGallery from "@/app/components/DashBoard/productsDetails/ProductGallery";
 import UploadList from "@/app/components/DashBoard/productsDetails/UploadList";
+import Link from "next/link";
 // import ProductGallery from "./ProductGallery";
 // import UploadList from "./UploadList";
 
@@ -26,13 +27,23 @@ const ProductDetails = () => {
 
         {/* bread Curmbs  */}
         <div className="flex items-center gap-2 pt-3 pb-6">
-          <div className=" flex gap-0.5 items-center cursor-pointer hover:scale-110 duration-200">
-            <GoHome />
+          <Link
+            href={"/dashboard"}
+            className=" flex gap-0.5 items-center cursor-pointer hover:scale-110 duration-200"
+          >
+            <GoHome className="mb-0.5 text-[#7E7E8F]" />
             <h3 className="text-[#7E7E8F] font-poppins text-[12px]">Home</h3>
-          </div>
+          </Link>
+          <MdKeyboardDoubleArrowRight className="text-[#7E7E8F]" />
+          <Link
+            href={"/dashboard/products"}
+            className="text-[#7E7E8F] font-poppins text-[12px] cursor-pointer hover:scale-110 duration-200"
+          >
+            Products
+          </Link>
           <MdKeyboardDoubleArrowRight className="text-[#7E7E8F]" />
           <h3 className="text-[#7364DB] font-poppins text-[12px] cursor-pointer hover:scale-110 duration-200">
-            Order List
+            Product Details
           </h3>
         </div>
       </div>

@@ -36,10 +36,13 @@ const page = () => {
 
       {/* bread Curmbs  */}
       <div className="flex items-center gap-2 pt-3 pb-6">
-        <div className=" flex gap-0.5 items-center cursor-pointer hover:scale-110 duration-200">
+        <Link
+          href={"/dashboard"}
+          className=" flex gap-0.5 items-center cursor-pointer hover:scale-110 duration-200"
+        >
           <GoHome className="mb-1" />
           <h3 className="text-[#7E7E8F] font-poppins text-[12px]">Home</h3>
-        </div>
+        </Link>
         <MdKeyboardDoubleArrowRight className="text-[#7E7E8F]" />
         <h3 className="text-[#7364DB] font-poppins text-[12px] cursor-pointer hover:scale-110 duration-200">
           All Products
@@ -162,7 +165,9 @@ const page = () => {
                 </div>
               </div>
               <div className="flex text-[#7E7E8F]! gap-14  items-center ">
-                <p className=" text-[16px] text-[#7E7E8F] [20%]">{item.sku}</p>
+                <p className=" text-[16px] text-[#7E7E8F] w-[40%]">
+                  {item.sku}
+                </p>
 
                 <p className=" text-[16px] ">${item.price}</p>
 
