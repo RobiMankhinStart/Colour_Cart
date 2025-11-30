@@ -171,8 +171,8 @@ const SideNav = () => {
   return (
     <div className="relative bg-white">
       {/* Back Button */}
-      <div className="absolute top-5 z-30 left-[95%] rounded-full shadow-gray-700 border border-[#e9d5d5] cursor-pointer shadow-2xl p-2">
-        <MdOutlineArrowBackIosNew className="text-[16px]" />
+      <div className="absolute top-5  z-50! left-[95%] rounded-full shadow-gray-700 border border-[#e9d5d5] cursor-pointer shadow-2xl p-2">
+        <MdOutlineArrowBackIosNew className="text-[20px]" />
       </div>
 
       {/* Logo */}

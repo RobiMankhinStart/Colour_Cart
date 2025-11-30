@@ -21,18 +21,22 @@ const TopNav = () => {
           />
           <CiMicrophoneOn className="text-[20px]" />
         </div>
-        <div className="w-[142px] text-[#7E7E8F] flex items-center gap-2">
+        <div className="w-[126px] rounded-md shadow-cyan-400 shadow-md px-1 hover:scale-110 duration-300 hover:text-gray-800! cursor-pointer text-[#7E7E8F] flex items-center gap-2">
           <RiEditBoxLine className="text-[16px] " />
           <button className="text-[14px] font-semibold font-poppins">
             Browse
           </button>
-          <MdKeyboardArrowDown className="text-[20px] text-[#C6CBD9] ml-auto" />
+          <MdKeyboardArrowDown className="text-[20px] text-[#b3b9ca] ml-auto" />
         </div>
       </div>
-      <div className="flex items-center gap-8 ml-[600px] ">
-        <IoChatbubblesOutline className="text-[34px] text-[#7E7E8F]" />
-        <MdOutlineNotificationImportant className="text-[34px] text-[#7E7E8F]" />
-        <Image src={avator} alt="avator" />
+      <div className="flex items-center  gap-8 ml-[600px] ">
+        <IoChatbubblesOutline className=" text-[#7E7E8F] hover:scale-110 cursor-pointer duration-300 shadow-md shadow-emerald-600 p-1 size-10 rounded-full" />
+        <MdOutlineNotificationImportant className="text-[34px]  shadow-md shadow-emerald-600 p-1 size-10 rounded-full hover:scale-110 cursor-pointer duration-300 text-[#7E7E8F]" />
+        <Image
+          src={avator}
+          className="hover:scale-110 cursor-pointer duration-300"
+          alt="avator"
+        />
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ const page = () => {
       </div>
       {/* ....top  */}
       <Top />
-      <div className="flex justify-between  w[99%]">
+      <div className="flex justify-between ">
         <MainChart />
         <BestSellers />
       </div>

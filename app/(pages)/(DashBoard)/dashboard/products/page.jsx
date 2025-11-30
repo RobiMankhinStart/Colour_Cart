@@ -12,6 +12,7 @@ import Image from "next/image";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { SlOptions } from "react-icons/sl";
+import Link from "next/link";
 
 const page = () => {
   const [products, setProducts] = useState([]);
@@ -36,7 +37,7 @@ const page = () => {
       {/* bread Curmbs  */}
       <div className="flex items-center gap-2 pt-3 pb-6">
         <div className=" flex gap-0.5 items-center cursor-pointer hover:scale-110 duration-200">
-          <GoHome />
+          <GoHome className="mb-1" />
           <h3 className="text-[#7E7E8F] font-poppins text-[12px]">Home</h3>
         </div>
         <MdKeyboardDoubleArrowRight className="text-[#7E7E8F]" />
@@ -45,10 +46,10 @@ const page = () => {
         </h3>
       </div>
       {/* ...productList......  */}
-      <div className="proList px-6">
+      <div className="proList bg-white! w-full rounded-xl p-6">
         {/* ...header .... */}
-        <div className="w-full border-b border-[#E8EDF2] pb-2 flex items-center gap-[235px]">
-          <div className="flex  text-[#7E7E8F]! gap-14  items-center ">
+        <div className="w-full border-b border-[#E8EDF2] pb-6 p-2 flex items-center justify-betwee gap-[390px]">
+          <div className="flex  text-[#7E7E8F]! gap-14   items-center ">
             <div className="flex items-center gap-10 ">
               <div className="flex items-center gap-3">
                 <p className=" text-[16px]">Image</p>
@@ -130,10 +131,13 @@ const page = () => {
           {products?.map((item) => (
             <div
               key={item.id}
-              className="w-full  my-3 border-b border-[#E8EDF2] pb-2 flex items-center gap-[60px]"
+              className="w-full my-3  border-b border-[#E8EDF2] pb-2 flex items-center  gap-[60px]"
             >
-              <div className="flex  text-[#7E7E8F]! gap-10  items-center ">
-                <div className=" ">
+              <div className="flex  text-[#7E7E8F]! gap-10   w-[35%] items-center ">
+                <Link
+                  href={"/dashboard/products/id"}
+                  className="cursor-pointer hover:scale-110 duration-300 "
+                >
                   <Image
                     className=""
                     src={item.thumbnail}
@@ -141,11 +145,16 @@ const page = () => {
                     width={82}
                     alt="productImg"
                   />
-                </div>
+                </Link>
 
-                <div className="flex items-center gap-10 ">
+                <div className="flex items-center gap-10">
                   <div className="flex flex-col gap-1">
-                    <p className=" text-[16px] font-semibold">{item.title}</p>
+                    <Link
+                      href={"/dashboard/products/id"}
+                      className=" text-[16px] font-semibold cursor-pointer hover:scale-110 duration-500 hover:text-gray-800"
+                    >
+                      {item.title}
+                    </Link>
                     <p className="text-[14px]  h-16 overflow-y-hidden text-[#7E7E8F] w-[250px]">
                       {item.description}
                     </p>
@@ -153,7 +162,7 @@ const page = () => {
                 </div>
               </div>
               <div className="flex text-[#7E7E8F]! gap-14  items-center ">
-                <p className=" text-[16px] text-[#7E7E8F]">{item.sku}</p>
+                <p className=" text-[16px] text-[#7E7E8F] [20%]">{item.sku}</p>
 
                 <p className=" text-[16px] ">${item.price}</p>
 
@@ -172,7 +181,9 @@ const page = () => {
                   <FaStar />
                 </div>
 
-                <p className=" text-[14px] font-semibold ml-4">186 / 2058</p>
+                <p className=" text-[14px] font-semibold ml-4 w-[100px]">
+                  186 / 2058
+                </p>
                 <button className="cursor-pointer">
                   <SlOptions />
                 </button>
