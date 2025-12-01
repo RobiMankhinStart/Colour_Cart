@@ -12,6 +12,7 @@ import { CiCalendar, CiFilter, CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { SlOptions } from "react-icons/sl";
 import { IoIosArrowDown } from "react-icons/io";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -19,10 +20,15 @@ const page = () => {
       <h2 className="text-[28px] font-bold font-poppins">Transaction List</h2>
       {/* bread Curmbs  */}
       <div className="flex items-center gap-2 pt-3 pb-6">
-        <div className=" flex gap-0.5 items-center cursor-pointer hover:scale-110 duration-200">
+        <Link
+          href={"/dashboard"}
+          className=" flex gap-0.5 items-center cursor-pointer hover:scale-110 duration-200"
+        >
           <GoHome />
-          <h3 className="text-[#7E7E8F] font-poppins text-[12px]">Home</h3>
-        </div>
+          <h3 className="text-[#7E7E8F] font-poppins text-[12px]">
+            Home/Dashboard
+          </h3>
+        </Link>
         <MdKeyboardDoubleArrowRight className="text-[#7E7E8F]" />
         <h3 className="text-[#7364DB] font-poppins text-[12px] cursor-pointer hover:scale-110 duration-200">
           Transaction List

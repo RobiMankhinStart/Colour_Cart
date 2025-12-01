@@ -41,7 +41,9 @@ const page = () => {
           className=" flex gap-0.5 items-center cursor-pointer hover:scale-110 duration-200"
         >
           <GoHome className="mb-1" />
-          <h3 className="text-[#7E7E8F] font-poppins text-[12px]">Home</h3>
+          <h3 className="text-[#7E7E8F] font-poppins text-[12px]">
+            Home/Dashboard
+          </h3>
         </Link>
         <MdKeyboardDoubleArrowRight className="text-[#7E7E8F]" />
         <h3 className="text-[#7364DB] font-poppins text-[12px] cursor-pointer hover:scale-110 duration-200">

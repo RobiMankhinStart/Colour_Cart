@@ -1,7 +1,10 @@
 "use client";
 import { Image } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 import { FiMoreVertical } from "react-icons/fi";
+import { GoHome } from "react-icons/go";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const page = () => {
   const [openMenu, setOpenMenu] = useState(null);
@@ -47,6 +50,24 @@ const page = () => {
 
   return (
     <div className="w-full p-6 bg-[#F7F8FA] min-h-screen rounded-xl">
+      <h2 className="text-[28px] font-bold font-poppins">Payments</h2>
+
+      {/* bread Curmbs  */}
+      <div className="flex items-center gap-2 pt-3 pb-6">
+        <div className=" flex gap-0.5 items-center cursor-pointer hover:scale-110 duration-200">
+          <GoHome />
+          <Link
+            href={"/dashboard"}
+            className="text-[#7E7E8F] font-poppins text-[12px]"
+          >
+            Home/DashBoard
+          </Link>
+        </div>
+        <MdKeyboardDoubleArrowRight className="text-[#7E7E8F]" />
+        <h3 className="text-[#7364DB] font-poppins text-[12px] cursor-pointer hover:scale-110 duration-200">
+          Payments
+        </h3>
+      </div>
       {/* TOP — ORDER ID + DATE */}
       <div className="flex justify-between items-start mb-6">
         <div>

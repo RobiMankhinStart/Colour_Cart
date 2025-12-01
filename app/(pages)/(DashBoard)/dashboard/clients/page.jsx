@@ -1,5 +1,6 @@
 "use client";
 import ReviewList from "@/app/components/DashBoard/ClientList/ReviewList";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FiChevronDown, FiFilter } from "react-icons/fi";
 import { GoHome } from "react-icons/go";
@@ -25,17 +26,20 @@ const page = () => {
   return (
     <>
       <div className="px-[23px] md:p-6 lg:p-8 bg[#F9FAFB] min-h-screen">
-        <h2 className="text-[28px] font-bold font-poppins">Orders List</h2>
+        <h2 className="text-[28px] font-bold font-poppins">Clients</h2>
 
         {/* bread Curmbs  */}
         <div className="flex items-center gap-2 pt-3 pb-6">
-          <div className=" flex gap-0.5 items-center cursor-pointer hover:scale-110 duration-200">
+          <Link
+            href={"/dashboard"}
+            className=" flex gap-0.5 items-center cursor-pointer hover:scale-110 duration-200"
+          >
             <GoHome />
             <h3 className="text-[#7E7E8F] font-poppins text-[12px]">Home</h3>
-          </div>
+          </Link>
           <MdKeyboardDoubleArrowRight className="text-[#7E7E8F]" />
           <h3 className="text-[#7364DB] font-poppins text-[12px] cursor-pointer hover:scale-110 duration-200">
-            Reviews List
+            Clients
           </h3>
         </div>
         {/* Filters */}
