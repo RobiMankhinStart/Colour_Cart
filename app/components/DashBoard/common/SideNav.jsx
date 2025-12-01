@@ -169,7 +169,7 @@ const SideNav = () => {
   };
 
   return (
-    <div className="relative bg-white">
+    <div className="relative bg-background transition-colors duration-300">
       {/* Back Button */}
       {/* <div className="absolute top-5  z-50! left-[95%] rounded-full shadow-gray-700 border border-[#e9d5d5] cursor-pointer shadow-2xl p-2">
         <MdOutlineArrowBackIosNew className="text-[20px]" />
@@ -178,7 +178,9 @@ const SideNav = () => {
       {/* Logo */}
       <div className="logo p-6 flex items-center gap-2">
         <Image src={favicon} alt="iconLogo" />
-        <h2 className="font-semibold text-[24px] text-[#9A9AAF]">Frox</h2>
+        <h2 className="font-semibold text-[24px] text-[#9A9AAF] dark:text-gray-400 transition-colors duration-300">
+          Frox
+        </h2>
       </div>
 
       {/* Top Menu */}
@@ -187,9 +189,13 @@ const SideNav = () => {
           <div
             key={item}
             onClick={() => handleClick(item)}
-            className={`flex items-center gap-2 hover:scale-110 w-[206px] h-14 pl-[21px] rounded-xl cursor-pointer duration-300
-              ${isActive(item) ? "bg-[#7364DB] text-white" : "text-[#7E7E8F]"}
-            `}
+            className={`flex items-center gap-2  hover:scale-110 w-[206px] h-14 pl-[21px] rounded-xl cursor-pointer duration-300
+              ${
+                isActive(item)
+                  ? "bg-[#7364DB] text-white"
+                  : "text-[#7E7E8F] dark:text-gray-400 dark:hover:text-gray-300"
+              }
+            transition-colors`}
           >
             <RiBarChartBoxAiLine className="text-[22px]" />
             <h3 className="font-poppins font-semibold text-[14px]">{item}</h3>
@@ -197,11 +203,13 @@ const SideNav = () => {
         ))}
       </div>
 
-      <div className="border-b border-[#E8EDF2] w-[206px] ml-[25px]"></div>
+      <div className="border-b border-[#E8EDF2] dark:border-slate-700 w-[206px] ml-[25px] transition-colors duration-300"></div>
 
       {/* Categories */}
       <div className="Categories mt-5 ml-6">
-        <h3 className="text-sm font-semibold py-3 pl-6">Categories</h3>
+        <h3 className="text-sm font-semibold py-3 pl-6 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+          Categories
+        </h3>
 
         {[
           { name: "Laptops", color: "#ECE663", count: 8 },
@@ -213,9 +221,9 @@ const SideNav = () => {
         ].map((cat, i) => (
           <div
             key={i}
-            className="flex items-center py-3 p-6 justify-between cursor-pointer hover:bg-gray-100 rounded-lg"
+            className="flex items-center py-3 p-6 justify-between cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-colors duration-300"
           >
-            <h3 className="text-[14px] text-[#7E7E8F] font-poppins">
+            <h3 className="text-[14px] text-[#7E7E8F] dark:text-gray-400 font-poppins transition-colors duration-300">
               {cat.name}
             </h3>
 
@@ -231,30 +239,32 @@ const SideNav = () => {
         ))}
 
         {/* Add Category */}
-        <div className="flex items-center py-3 p-6 gap-3 cursor-pointer hover:text-[#7364DB]">
-          <CiSquarePlus className="text-[#7E7E8F] text-[20px]" />
+        <div className="flex items-center py-3 p-6 gap-3 cursor-pointer hover:text-[#7364DB] dark:text-gray-400 dark:hover:text-purple-400 transition-colors duration-300">
+          <CiSquarePlus className="text-[#7E7E8F] dark:text-gray-500 text-[20px] transition-colors duration-300" />
           <h3 className="text-[14px] font-medium font-poppins">Add category</h3>
         </div>
       </div>
 
-      <div className="border-b border-[#E8EDF2] w-[206px] mt-[22px] mb-[35px] ml-[25px]"></div>
+      <div className="border-b border-[#E8EDF2] dark:border-slate-700 w-[206px] mt-[22px] mb-[35px] ml-[25px] transition-colors duration-300"></div>
 
       {/* Top Sellers */}
       <div className="flex flex-col gap-4 ml-[51px]">
-        <h3 className="font-poppins text-[14px] font-semibold">Top Sellers</h3>
+        <h3 className="font-poppins text-[14px] font-semibold text-gray-800 dark:text-gray-200 transition-colors duration-300">
+          Top Sellers
+        </h3>
 
         <div className="flex items-center">
           <Image src={person1} alt="person" />
           <Image src={person2} alt="person" className="-ml-[5%]" />
           <Image src={person1} alt="person" className="-ml-[5%]" />
           <Image src={person2} alt="person" className="-ml-[5%]" />
-          <div className="p-2 rounded-full bg-[#7364DB] -ml-[5%] cursor-pointer">
+          <div className="p-2 rounded-full bg-[#7364DB] -ml-[5%] cursor-pointer hover:scale-110 transition-transform duration-300">
             <FiPlusCircle className="text-[18px] text-white" />
           </div>
         </div>
       </div>
 
-      <div className="border-b border-[#E8EDF2] w-[206px] my-[35px] ml-[25px]"></div>
+      <div className="border-b border-[#E8EDF2] dark:border-slate-700 w-[206px] my-[35px] ml-[25px] transition-colors duration-300"></div>
     </div>
   );
 };

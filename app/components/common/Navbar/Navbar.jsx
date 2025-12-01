@@ -8,6 +8,8 @@ import { CiLogout } from "react-icons/ci";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
 import { toast } from "react-toastify";
+import ThemeToggle from "../ThemeToggle";
+
 export default function Navbar() {
   // const router = useRouter();
 
@@ -31,41 +33,46 @@ export default function Navbar() {
       </Link>
 
       {/* Search */}
-      <div className="md:w-[200px] lg:w-[302px] p-3 bg-[#F5F5F5] text-[#989898] rounded-lg flex items-center gap-1">
+      <div className="md:w-[200px] lg:w-[302px] p-3 bg-[#F5F5F5] dark:bg-slate-700 text-[#989898] dark:text-gray-400 rounded-lg flex items-center gap-1 transition-colors duration-300">
         <CiSearch className="text-[24px]" />
-        <input className="outline-none" type="text" placeholder="Search" />
+        <input
+          className="outline-none dark:bg-slate-700 dark:text-gray-300 transition-colors duration-300"
+          type="text"
+          placeholder="Search"
+        />
       </div>
 
       {/* Menu */}
-      <ul className="flex text-[#989898] items-center md:gap-4 lg:gap-7">
-        <li className="hover:text-black md:text-[15px] lg:text-[18px] font-medium">
+      <ul className="flex text-[#989898] dark:text-gray-400 items-center md:gap-4 lg:gap-7">
+        <li className="hover:text-black dark:hover:text-white md:text-[15px] lg:text-[18px] font-medium transition-colors duration-300">
           <Link href="/">Home</Link>
         </li>
-        <li className="hover:text-black md:text-[15px] lg:text-[18px] font-medium">
+        <li className="hover:text-black dark:hover:text-white md:text-[15px] lg:text-[18px] font-medium transition-colors duration-300">
           <Link href="/about">About</Link>
         </li>
-        <li className="hover:text-black md:text-[15px] lg:text-[18px] font-medium">
+        <li className="hover:text-black dark:hover:text-white md:text-[15px] lg:text-[18px] font-medium transition-colors duration-300">
           <Link href="/contact">Contact</Link>
         </li>
-        <li className="hover:text-black md:text-[15px] lg:text-[18px] font-medium">
+        <li className="hover:text-black dark:hover:text-white md:text-[15px] lg:text-[18px] font-medium transition-colors duration-300">
           <Link href="/register">Register</Link>
         </li>
       </ul>
 
       {/* Icons */}
       <div className="flex items-center md:gap-3 lg:gap-6">
-        <IoMdHeartEmpty className="md:text-2xl lg:text-[32px] cursor-pointer hover:text-[#989898] hover:scale-110 duration-200" />
+        <IoMdHeartEmpty className="md:text-2xl lg:text-[32px] cursor-pointer hover:text-[#989898] dark:hover:text-gray-300 hover:scale-110 duration-200 transition-colors" />
 
         <Link href="/ShoppingCart">
-          <IoCartOutline className="md:text-2xl lg:text-[32px] cursor-pointer hover:text-[#989898] hover:scale-110 duration-200" />
+          <IoCartOutline className="md:text-2xl lg:text-[32px] cursor-pointer hover:text-[#989898] dark:hover:text-gray-300 hover:scale-110 duration-200 transition-colors" />
         </Link>
 
         <Link href="/login">
-          <FiUser className="md:text-2xl lg:text-[32px] cursor-pointer hover:text-[#989898] hover:scale-110 duration-200" />
+          <FiUser className="md:text-2xl lg:text-[32px] cursor-pointer hover:text-[#989898] dark:hover:text-gray-300 hover:scale-110 duration-200 transition-colors" />
         </Link>
         <Link onClick={handleLogout} href="/login">
-          <CiLogout className="md:text-2xl lg:text-[32px] cursor-pointer hover:text-[#989898] hover:scale-110 duration-200" />
+          <CiLogout className="md:text-2xl lg:text-[32px] cursor-pointer hover:text-[#989898] dark:hover:text-gray-300 hover:scale-110 duration-200 transition-colors" />
         </Link>
+        <ThemeToggle />
       </div>
     </nav>
   );

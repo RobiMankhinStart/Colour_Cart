@@ -3,6 +3,7 @@ import "../../../app/globals.css";
 import SideNav from "@/app/components/DashBoard/common/SideNav";
 import TopNav from "@/app/components/DashBoard/common/TopNav";
 import Footer from "@/app/components/DashBoard/common/Footer";
+import { ThemeProvider } from "@/app/context/ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,15 +31,17 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full border flex bg-[#e5e5ea] `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full border flex bg-[#e5e5ea] dark:bg-slate-800 transition-colors duration-300`}
       >
-        <SideNav />
+        <ThemeProvider>
+          <SideNav />
 
-        <div className="">
-          <TopNav />
-          <div className="mt-28  ">{children}</div>
-          <Footer />
-        </div>
+          <div className="">
+            <TopNav />
+            <div className="mt-28  ">{children}</div>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
