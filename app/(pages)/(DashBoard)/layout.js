@@ -34,13 +34,11 @@ export default async function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased w-full  flex bg-[#e5e5ea] dark:bg-slate-800 transition-colors duration-300`}
       >
         <ThemeProvider>
-          <div className="overflow-visible ">
-            <SideNav />
-          </div>
+          <SideNav />
 
           <div className="">
             <TopNav />
-            <div className="mt-28  ">{children}</div>
+            <div className="mt-28  px-4">{children}</div>
             <Footer />
           </div>
         </ThemeProvider>
