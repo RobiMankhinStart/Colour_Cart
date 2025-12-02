@@ -49,7 +49,7 @@ const page = () => {
   };
 
   return (
-    <div className="w-full p-6 bg-[#F7F8FA] min-h-screen rounded-xl">
+    <div className="w-full p-6 bg-background min-h-screen rounded-xl">
       <h2 className="text-[28px] font-bold font-poppins">Payments</h2>
 
       {/* bread Curmbs  */}
@@ -85,7 +85,7 @@ const page = () => {
             <option>Cancelled</option>
           </select>
 
-          <button className="bg-[#E5E6EB] px-4 py-2 rounded-lg">Save</button>
+          <button className="bg-bgsecond px-4 py-2 rounded-lg">Save</button>
 
           <button className="border px-4 py-2 rounded-lg">🖨</button>
         </div>
@@ -94,10 +94,10 @@ const page = () => {
       {/* TOP INFO CARDS — GRID */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
         {/* Customer */}
-        <div className="bg-white p-4 rounded-lg shadow">
+        <div className="bg-bgsecond p-4 px-6 rounded-lg shadow">
           <h3 className="font-semibold mb-2">Customer</h3>
           <p className="text-sm">Full name: Jane Cooper</p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm  text-secondary">
             E-mail: tim.jennings@example.com
           </p>
           <p className="text-sm">Phone: +099 856 245</p>
@@ -107,7 +107,7 @@ const page = () => {
         </div>
 
         {/* Order Info */}
-        <div className="bg-white p-4 rounded-lg shadow">
+        <div className="bg-bgsecond p-4 rounded-lg shadow px-6">
           <h3 className="font-semibold mb-2">Order Info</h3>
           <p className="text-sm">Shipping: Next express</p>
           <p className="text-sm">Pay method: Paypal</p>
@@ -118,9 +118,9 @@ const page = () => {
         </div>
 
         {/* Deliver to */}
-        <div className="bg-white p-4 rounded-lg shadow">
+        <div className="bg-bgsecond p-4 px-6 rounded-lg shadow">
           <h3 className="font-semibold mb-2">Deliver to</h3>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-secondary">
             Address: Santa Ana, Illinois 85486
             <br />
             2972 Westheimer Rd.
@@ -133,7 +133,7 @@ const page = () => {
         </div>
 
         {/* Payment Info */}
-        <div className="bg-white p-4 rounded-lg shadow">
+        <div className="bg-bgsecond p-4 px-6 rounded-lg shadow">
           <h3 className="font-semibold mb-2">Payment info</h3>
           <p className="text-sm">💳 Master Card **** 6557</p>
           <p className="text-sm">Fox Market LLC</p>
@@ -142,11 +142,11 @@ const page = () => {
       </div>
 
       {/* Notes */}
-      <div className="bg-white p-4 rounded-lg shadow mb-6">
-        <h3 className="font-semibold mb-2">Notes</h3>
+      <div className="bg-bg p-4 rounded-lg shadow mb-6">
+        <h3 className="font-semibold mb-2 text-secondary">Notes</h3>
         <textarea
           placeholder="Type some note"
-          className="w-full border p-3 rounded-lg outline-none h-24"
+          className="w-full text-secondary border p-3 rounded-lg outline-none h-24"
         ></textarea>
       </div>
 

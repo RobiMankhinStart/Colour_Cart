@@ -6,8 +6,7 @@ import {
   MdKeyboardArrowUp,
   MdKeyboardDoubleArrowRight,
 } from "react-icons/md";
-import product1 from "../../../../../public/product1.png";
-import product2 from "../../../../../public/product2.png";
+
 import Image from "next/image";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
@@ -17,10 +16,14 @@ import Link from "next/link";
 const page = () => {
   const [products, setProducts] = useState([]);
   console.log("products", products);
+
+  // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
   useEffect(() => {
     async function getProducts() {
       try {
-        const res = await fetch("https://dummyjson.com/products");
+        const res = await fetch("https://dummyjson.com/products?limit=100");
         const data = await res.json();
 
         setProducts(data.products);
@@ -30,6 +33,17 @@ const page = () => {
     }
     getProducts();
   }, []);
+
+  // Pagination calculations
+  const lastIndex = currentPage * itemsPerPage;
+  const firstIndex = lastIndex - itemsPerPage;
+  const currentItems = products.slice(firstIndex, lastIndex);
+
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+
+  const goNext = () =>
+    currentPage < totalPages && setCurrentPage(currentPage + 1);
+  const goPrev = () => currentPage > 1 && setCurrentPage(currentPage - 1);
   return (
     <div className="px-[23px] font-poppins! ">
       <h2 className="text-[28px] font-bold font-poppins">All Products</h2>
@@ -50,11 +64,34 @@ const page = () => {
           All Products
         </h3>
       </div>
+      {/* .....................pagination......................  */}
+      <div className="w-full flex justify-between items-center mb-4 px-2">
+        <button
+          onClick={goPrev}
+          disabled={currentPage === 1}
+          className="px-4 py-2  hover:text-textHover rounded-lg bg-bg text-sm hover:bg-secondary disabled:opacity-40"
+        >
+          Previous
+        </button>
+
+        <p className="text-sm font-medium">
+          Page <span className="text-blue-500">{currentPage}</span> of{" "}
+          {totalPages}
+        </p>
+
+        <button
+          onClick={goNext}
+          disabled={currentPage === totalPages}
+          className="px-4 py-2 hover:text-textHover rounded-lg bg-bg text-sm hover:bg-secondary disabled:opacity-40"
+        >
+          Next
+        </button>
+      </div>
       {/* ...productList......  */}
-      <div className="proList bg-white! w-full rounded-xl p-6">
+      <div className="proList bg-background w-full rounded-xl p-6">
         {/* ...header .... */}
         <div className="w-full border-b border-[#E8EDF2] pb-6 p-2 flex items-center justify-betwee gap-[390px]">
-          <div className="flex  text-[#7E7E8F]! gap-14   items-center ">
+          <div className="flex  text-primary gap-14   items-center ">
             <div className="flex items-center gap-10 ">
               <div className="flex items-center gap-3">
                 <p className=" text-[16px]">Image</p>
@@ -133,12 +170,12 @@ const page = () => {
         </div>
         {/* ......proList....  */}
         <div className="">
-          {products?.map((item) => (
+          {currentItems?.map((item) => (
             <div
               key={item.id}
               className="w-full my-3  border-b border-[#E8EDF2] pb-2 flex items-center  gap-[60px]"
             >
-              <div className="flex  text-[#7E7E8F]! gap-10   w-[35%] items-center ">
+              <div className="flex  text-[#7E7E8F] gap-10   w-[35%] items-center ">
                 <Link
                   href={"/dashboard/products/id"}
                   className="cursor-pointer hover:scale-110 duration-300 "
@@ -156,7 +193,7 @@ const page = () => {
                   <div className="flex flex-col gap-1">
                     <Link
                       href={"/dashboard/products/id"}
-                      className=" text-[16px] font-semibold cursor-pointer hover:scale-110 duration-500 hover:text-gray-800"
+                      className=" text-[16px] font-semibold cursor-pointer hover:scale-110 duration-500 hover:text-secondary"
                     >
                       {item.title}
                     </Link>

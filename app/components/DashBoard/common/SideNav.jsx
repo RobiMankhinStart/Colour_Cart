@@ -178,22 +178,19 @@ const SideNav = () => {
       {/* Logo */}
       <div className="logo p-6 flex items-center gap-2">
         <Image src={favicon} alt="iconLogo" />
-        <h2 className="font-semibold text-[24px] text-[#9A9AAF] dark:text-gray-400 transition-colors duration-300">
+        <h2 className="font-semibold text-[24px] text-primary transition-colors duration-300">
           Frox
         </h2>
       </div>
 
       {/* Top Menu */}
-      <div className="p-6 flex flex-col gap-0.5 overflow-visible">
+      <div className="p-6 flex flex-col gap-0.5">
         {menuItems.map((item) => (
           <div
             key={item}
             onClick={() => handleClick(item)}
-            className={`flex items-center gap-2 ease-in-out transform transition duration-300 hover:scale-110 w-[206px] h-14 pl-[21px] rounded-xl cursor-pointer  ${
-              isActive(item)
-                ? "bg-[#7364DB] text-white"
-                : "text-[#7E7E8F] dark:text-gray-400 dark:hover:text-gray-300"
-            }
+            className={`flex items-center gap-2  hover:scale-110 w-[206px] h-14 pl-[21px] rounded-xl cursor-pointer duration-300
+              ${isActive(item) ? "bg-[#7364DB] text-white" : "text-primary"}
             transition-colors`}
           >
             <RiBarChartBoxAiLine className="text-[22px]" />

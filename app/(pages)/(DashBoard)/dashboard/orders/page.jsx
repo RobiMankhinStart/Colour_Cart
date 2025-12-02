@@ -18,10 +18,14 @@ import Link from "next/link";
 const page = () => {
   const [products, setProducts] = useState([]);
   console.log("products", products);
+
+  // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
   useEffect(() => {
     async function getProducts() {
       try {
-        const res = await fetch("https://dummyjson.com/products");
+        const res = await fetch("https://dummyjson.com/products?limit=100");
         const data = await res.json();
 
         setProducts(data.products);
@@ -31,6 +35,17 @@ const page = () => {
     }
     getProducts();
   }, []);
+
+  // Pagination calculations
+  const lastIndex = currentPage * itemsPerPage;
+  const firstIndex = lastIndex - itemsPerPage;
+  const currentItems = products.slice(firstIndex, lastIndex);
+
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+
+  const goNext = () =>
+    currentPage < totalPages && setCurrentPage(currentPage + 1);
+  const goPrev = () => currentPage > 1 && setCurrentPage(currentPage - 1);
   return (
     <div className="px-[23px] font-poppins! ">
       <h2 className="text-[28px] font-bold font-poppins">Orders List</h2>
@@ -78,6 +93,29 @@ const page = () => {
             <p className="text-[#7E7E8F] text-[14px]">Filters</p>
           </button>
         </div>
+      </div>
+      {/* .....................pagination......................  */}
+      <div className="w-full flex justify-between items-center mb-4 px-2">
+        <button
+          onClick={goPrev}
+          disabled={currentPage === 1}
+          className="px-4 py-2  hover:text-textHover rounded-lg bg-bg text-sm hover:bg-secondary disabled:opacity-40"
+        >
+          Previous
+        </button>
+
+        <p className="text-sm font-medium">
+          Page <span className="text-blue-500">{currentPage}</span> of{" "}
+          {totalPages}
+        </p>
+
+        <button
+          onClick={goNext}
+          disabled={currentPage === totalPages}
+          className="px-4 py-2 hover:text-textHover rounded-lg bg-bg text-sm hover:bg-secondary disabled:opacity-40"
+        >
+          Next
+        </button>
       </div>
       {/* ...productList......  */}
       <div className="proList px-6">
@@ -162,7 +200,7 @@ const page = () => {
         </div>
         {/* ......proList....  */}
         <div className="">
-          {products?.map((item) => (
+          {currentItems?.map((item) => (
             <div
               key={item.id}
               className="w-full  my-3 border-b border-[#E8EDF2] pb-2 flex items-center gap-[60px]"
@@ -185,7 +223,7 @@ const page = () => {
                   <div className="flex flex-col gap-1">
                     <Link
                       href={"/dashboard/products/id"}
-                      className=" text-[16px] font-semibold hover:scale-110 duration-300"
+                      className=" text-[16px] font-semibold hover:text-secondary hover:scale-110 duration-300"
                     >
                       {item.title}
                     </Link>
