@@ -154,11 +154,11 @@ const page = () => {
       <h2 className="text-lg font-semibold mb-4">Products</h2>
 
       {/* PRODUCTS HEADER */}
-      <div className="flex items-center px-4 py-2 bg-white rounded-lg shadow text-gray-500 text-sm font-medium">
+      <div className="flex items-center px-4 py-2 bg-bgsecond rounded-lg shadow text text-sm font-medium">
         <div className="w-6">
-          <div className="w-[18px] h-[18px] border border-gray-400 rounded-sm"></div>
+          <div className="w-[18px] h-[18px] border border-gray-400 text-primary rounded-sm"></div>
         </div>
-        <div className="flex-1">Product Name</div>
+        <div className="flex-1 ">Product Name</div>
         <div className="w-24 text-center">Price</div>
         <div className="w-24 text-center">Quantity</div>
         <div className="w-24 text-right">Total</div>
@@ -169,7 +169,7 @@ const page = () => {
         {products.map((p, idx) => (
           <div
             key={p.id}
-            className="flex items-center px-4 py-3 bg-white rounded-lg shadow relative"
+            className="flex items-center px-4 py-3 bg-bgsecond rounded-lg shadow relative"
           >
             {/* checkbox */}
             <div className="w-6">
@@ -218,7 +218,7 @@ const page = () => {
 
       {/* TOTALS */}
       <div className="flex justify-end mt-6">
-        <div className="bg-white p-4 rounded-lg shadow w-64 space-y-2 text-sm">
+        <div className="bg-bg p-4 rounded-lg shadow w-64 space-y-2 text-sm">
           <div className="flex justify-between">
             <span>Subtotal:</span>
             <span className="font-medium">$630.44</span>
