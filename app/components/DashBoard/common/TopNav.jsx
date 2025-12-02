@@ -13,8 +13,8 @@ import ThemeToggle from "@/app/components/common/ThemeToggle";
 
 const TopNav = () => {
   return (
-    <div className="flex right-0 w-[85.5%] rounded-lg z-40 fixed ml-2 justify-between  py-6 px-12 bg-white dark:bg-slate-900 transition-colors duration-300">
-      <div className="flex gap-12">
+    <div className="flex left-[15%] right-0 rounded-lg z-40 fixed justify-between px-2 py-6 bg-white dark:bg-slate-900 transition-colors duration-300">
+      <div className="flex gap-12 ">
         <div className=" flex items-center pl-4 gap-0.5 w-[360px] h-12 rounded-xl bg-[#F5F5FA] dark:bg-slate-800 transition-colors duration-300">
           <CiSearch className="text-[20px] text-[#7E7E8F] dark:text-gray-400" />
           <input
@@ -32,9 +32,9 @@ const TopNav = () => {
           <MdKeyboardArrowDown className="text-[20px] text-[#b3b9ca] dark:text-gray-500 ml-auto" />
         </div>
       </div>
-      <div className="flex items-center gap-8 ml-[600px]">
+      <div className="flex items-center gap-8 ml-[600px]  ">
         <IoChatbubblesOutline className=" text-[#7E7E8F] dark:text-gray-400 hover:scale-110 cursor-pointer duration-300 shadow-md shadow-emerald-600 p-1 size-10 rounded-full transition-colors" />
-        <MdOutlineNotificationImportant className="text-[34px] dark:text-gray-400 shadow-md shadow-emerald-600 p-1 size-10 rounded-full hover:scale-110 cursor-pointer duration-300 text-[#7E7E8F] transition-colors" />
+        <MdOutlineNotificationImportant className=" dark:text-gray-400 shadow-md shadow-emerald-600 p-1 size-10 rounded-full hover:scale-110 cursor-pointer duration-300 text-[#7E7E8F] transition-colors" />
         <ThemeToggle />
         <Image
           src={avator}
