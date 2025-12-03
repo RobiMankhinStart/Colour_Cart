@@ -34,11 +34,11 @@ export default function Top() {
   ];
 
   return (
-    <div className="flex gap-4 overflow-x-auto py-4 flex-1 ">
+    <div className="flex flex-col items-center md:flex-row border flex-wrap gap-4 py-4  ">
       {cards.map((card, i) => (
         <div
           key={i}
-          className=" bg-white shadow-sm p-5 px-9 flex flex-col gap-3 rounded-2xl border border-[#E8EDF2]"
+          className=" bg-white shadow-sm p-5 px-9 flex flex-col gap-3 rounded-2xl border w-[300px] border-[#E8EDF2]"
         >
           <div className="flex justify-between items-start">
             <p className="text-gray-500 text-sm font-medium">{card.title}</p>

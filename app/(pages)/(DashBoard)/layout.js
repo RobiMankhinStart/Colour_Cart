@@ -38,7 +38,7 @@ export default async function RootLayout({ children }) {
 
           <div className="">
             <TopNav />
-            <div className="mt-28  px-4">{children}</div>
+            <div className="lg:mt-28 mt-36  px-4">{children}</div>
             <Footer />
           </div>
         </ThemeProvider>
