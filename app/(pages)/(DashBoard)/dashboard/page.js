@@ -39,14 +39,10 @@ const page = () => {
             Home/Dashboard
           </h3>
         </div>
-        {/* <MdKeyboardDoubleArrowRight className="text-[#7E7E8F]" />
-        <h3 className=" font-poppins text-[12px] cursor-pointer hover:scale-110 duration-200">
-          Dashboard
-        </h3> */}
       </div>
       {/* ....top  */}
       <Top />
-      <div className="flex justify-between ">
+      <div className="flex flex-wrap justify-between ">
         <MainChart />
         <BestSellers />
       </div>
