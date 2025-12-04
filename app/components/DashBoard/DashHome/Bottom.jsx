@@ -5,7 +5,7 @@ import TotalRevenue from "./TotalRevenue";
 
 const Bottom = () => {
   return (
-    <div className="mt-1 flex justify-between w-[99%]">
+    <div className="mt-1 flex flex-wrap justify-between w-[99%]">
       <MarketOverview />
       <VisitsBySource />
       <TotalRevenue />

@@ -15,7 +15,7 @@ const data = [
 
 export default function MarketOverview() {
   return (
-    <div className="bg-white w-[30%] p-6 rounded-xl shadow mt-6">
+    <div className="bg-white lg:w-[400px] md:w-[50%] sm:min-w-[390px]  p-6 rounded-xl shadow mt-6">
       <div className="mb-3 flex justify-between border-b border-[#E8EDF2] pb-2">
         <h2 className="font-semibold ">Market Overview</h2>
         <button className="text-[#9A9AAF] cursor-pointer">

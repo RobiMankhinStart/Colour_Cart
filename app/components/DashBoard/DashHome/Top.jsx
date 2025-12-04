@@ -34,7 +34,7 @@ export default function Top() {
   ];
 
   return (
-    <div className="flex sm:max-w-[400px] md:max-w-[600px] lg:max-w-full flex-col items-center md:flex-row border flex-wrap gap-4 py-4  ">
+    <div className="flex sm:max-w-[400px] md:max-w-[600px] lg:max-w-full flex-col items-center md:flex-row flex-wrap gap-4 py-4  ">
       {cards.map((card, i) => (
         <div
           key={i}
