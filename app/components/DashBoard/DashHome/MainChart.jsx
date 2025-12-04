@@ -128,7 +128,7 @@ const cardinal = curveCardinal.tension(0.2);
 
 export default function MainChart() {
   return (
-    <div className="py-4.5 px-6 rounded-xl border bg-white border-[#E8EDF2] sm:w-[350px] md:w-[500px] lg:w-full">
+    <div className="py-4.5 px-6 rounded-xl border bg-white border-[#E8EDF2] sm:max-w-[400px] md:max-w-[600px] lg:w-full">
       {/* heading part */}
       <div className="flex items-center justify-between pb-5 pt-2 flex-wrap gap-3">
         <h2 className="text-[16px] font-poppins font-semibold">
@@ -148,27 +148,35 @@ export default function MainChart() {
       </div>
 
       {/* Legend section */}
-      <div className="flex gap-4 my-4 items-center flex-wrap">
+      <div className="flex gap-2 lg:gap-4 my-4 items-center flex-wrap">
         <div className="flex items-center gap-1.5">
           <p className="size-4 rounded-sm bg-[#979797]"></p>
-          <p className="text-[#7E7E8F] mt-1">Completed</p>
+          <p className="text-[#7E7E8F] text-[12px] lg:text-base mt-1">
+            Completed
+          </p>
         </div>
         <div className="flex items-center gap-1.5">
           <p className="size-4 rounded-sm bg-[#F3BCFD]"></p>
-          <p className="text-[#7E7E8F] mt-1">Completed</p>
+          <p className="text-[#7E7E8F] text-[12px] lg:text-base mt-1">
+            Completed
+          </p>
         </div>
         <div className="flex items-center gap-1.5">
           <p className="size-4 rounded-sm bg-[#80B7FB]"></p>
-          <p className="text-[#7E7E8F] mt-1">Completed</p>
+          <p className="text-[#7E7E8F] text-[12px] lg:text-base mt-1">
+            Completed
+          </p>
         </div>
         <div className="flex items-center gap-1.5">
           <p className="size-4 rounded-sm bg-[#B9A2FB]"></p>
-          <p className="text-[#7E7E8F] mt-1">Completed</p>
+          <p className="text-[#7E7E8F] text-[12px] lg:text-base mt-1">
+            Completed
+          </p>
         </div>
       </div>
 
       {/* chart body */}
-      <div className="w-full border h-[350px]">
+      <div className="w-full h-[350px]">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             data={data}

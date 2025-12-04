@@ -127,7 +127,7 @@ const statusColor = {
 
 export default function RecentPurchases({ products }) {
   return (
-    <div className=" w-[99%] bg-white p-6 shadow rounded-xl mt-6 font-poppins!">
+    <div className=" w-[99%] bg-white border sm:max-w-[400px] md:max-w-[600px] lg:max-w-full overflow-x-scroll p-6 shadow rounded-xl mt-6 font-poppins!">
       <h2 className="text-[18px] font-semibold mb-4">Recent Purchases</h2>
 
       {/* HEADER ROW */}
@@ -154,13 +154,15 @@ export default function RecentPurchases({ products }) {
           </div>
 
           {/* Product */}
-          <div className="flex-1">{p?.title}</div>
+          <div className="flex-1 border">{p?.title}</div>
 
           {/* Order ID */}
-          <div className="w-20  ml-7">{p?.id}</div>
+          <div className="w-20 border ml-7">{p?.id}</div>
 
           {/* Date */}
-          <div className="">{p?.meta.updatedAt}</div>
+          <div className="max-w-20 min-w-10 lg:max-w-28 border overflow-hidden">
+            {p?.meta.updatedAt}
+          </div>
 
           {/* Customer */}
           <div className="flex-1  ml-14 flex items-center gap-2">
