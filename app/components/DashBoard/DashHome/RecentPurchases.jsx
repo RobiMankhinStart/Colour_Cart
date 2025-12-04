@@ -154,18 +154,18 @@ export default function RecentPurchases({ products }) {
           </div>
 
           {/* Product */}
-          <div className="flex-1 border">{p?.title}</div>
+          <div className="flex-1 min-w-[100px] border">{p?.title}</div>
 
           {/* Order ID */}
-          <div className="w-20 border ml-7">{p?.id}</div>
+          <div className="min-w-10 border ml-7">{p?.id}</div>
 
           {/* Date */}
-          <div className="max-w-20 min-w-10 lg:max-w-28 border overflow-hidden">
+          <div className=" min-w-20 lg:max-w-28 border overflow-hidden">
             {p?.meta.updatedAt}
           </div>
 
           {/* Customer */}
-          <div className="flex-1  ml-14 flex items-center gap-2">
+          <div className="flex-1 border min-w-28  ml-14 flex items-center gap-2">
             <Image
               src={avator}
               width={26}
@@ -177,7 +177,7 @@ export default function RecentPurchases({ products }) {
           </div>
 
           {/* Status */}
-          <div className="flex-1 flex items-center ml-12 gap-2">
+          <div className="flex-1 min-w border flex items-center lg:ml-28 gap-2">
             <span
               className={`w-2 h-2 rounded-full border ${statusColor[p.status]}`}
             ></span>
@@ -185,7 +185,7 @@ export default function RecentPurchases({ products }) {
           </div>
 
           {/* Amount */}
-          <div className="flex-1">${p.price}</div>
+          <div className="flex-1 ml-5">${p.price}</div>
 
           {/* Actions */}
           <div className="w-[30px]">
