@@ -26,7 +26,7 @@ const BestSellers = () => {
             <p className="font-poppins text-[#9A9AAF]">985 sales</p>
           </div>
         </div>
-        <div className="mt-3 px-6 flex items-center gap-4">
+        <div className="mt-3  px-6 flex items-center gap-4">
           <Image src={avator2} alt="avator2" />
           <div className="flex flex-col">
             <h3 className="font-poppins ">Cameron Williamson</h3>

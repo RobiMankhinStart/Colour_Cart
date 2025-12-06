@@ -42,7 +42,7 @@ const page = () => {
       </div>
       {/* ....top  */}
       <Top />
-      <div className="flex sm:max-w-[400px] md:max-w-[600px] lg:max-w-full sm:flex-col lg:flex-row justify-between ">
+      <div className="flex flex-wrap sm:max-w-[400px] md:max-w-[600px] lg:max-w-full sm:flex-col lg:flex-row gap-3 justify-between ">
         <MainChart />
         <BestSellers />
       </div>

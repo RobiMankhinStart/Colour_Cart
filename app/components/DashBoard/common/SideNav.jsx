@@ -54,7 +54,7 @@ const SideNav = () => {
       {/* SIDEBAR WRAPPER */}
       <div
         className={`
-          fixed lg:static top-0 left-0 h-full w-[260px] border
+          fixed lg:static top-0 left-0 h-full w-[260px] 
           bg-white dark:bg-slate-900 shadow-lg lg:shadow-none 
           transition-transform duration-300 z-[9998]
           ${open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
