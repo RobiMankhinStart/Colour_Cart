@@ -1,8 +1,8 @@
 import React from "react";
 // `https://dummyjson.com/products?limit=20&skip=10&select=title,price`,
 
-import ProCard from "../Common/ProCard";
 import Link from "next/link";
+import ProCard from "../common/ProCard";
 
 async function getProducts() {
   const res = await fetch(`https://dummyjson.com/products`, {

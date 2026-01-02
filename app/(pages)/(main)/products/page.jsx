@@ -1,6 +1,6 @@
 import React from "react";
-// import ProCard from "@/app/components/Common/ProCard";
-import Pagination from "@/app/components/Common/Pagination";
+
+import Pagination from "@/app/components/common/Pagination";
 import ProList from "@/app/components/Products/ProList";
 import FilterPanel from "@/app/components/Products/FilterPanel";
 import MobileFilter from "@/app/components/Products/MobileFilter";
