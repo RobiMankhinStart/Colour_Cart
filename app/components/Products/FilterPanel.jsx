@@ -15,6 +15,7 @@ export default function FilterPanel() {
   // Load selected filter from URL
   useEffect(() => {
     const urlCategory = params.get("categories");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (urlCategory) setSelectedCategory(urlCategory);
   }, [params]);
 
