@@ -20,7 +20,7 @@ const ProCard = ({ item }) => {
     localStorage.setItem("nextProID", JSON.stringify(localID));
   };
   return (
-    <div className="w-[268px] h-[440px] bg-[#F6F6F6] shadow-md shadow-gray-400 rounded-[9px] px-2 py-5 flex flex-col gap-4 items-center justify-center">
+    <div className="w-67 h-110 bg-[#F6F6F6] shadow-md shadow-gray-400 rounded-[9px] px-2 py-5 flex flex-col gap-4 items-center justify-center">
       <div className=" w-full flex justify-end">
         {/* <CiHeart className="text-[32px] hover:scale-110 duration-200 cursor-pointer" /> */}
       </div>
