@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { CiCircleRemove } from "react-icons/ci";
 import Summary from "@/app/components/ShoppingCart/Summary";
 
-const page = () => {
+const Page = () => {
   const [cartProducts, setCartProducts] = useState([]);
 
   useEffect(() => {
@@ -107,4 +107,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
